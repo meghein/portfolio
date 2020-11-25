@@ -1,4 +1,6 @@
 <script>
+  import { y } from './stores.js';
+  import Nav from './Nav.svelte'
   import About from './About.svelte'
   import Portfolio from './Portfolio.svelte'
   import Contact from './Contact.svelte'
@@ -32,12 +34,16 @@
 	}
 </style>
 
+<svelte:window bind:scrollY={$y}/>
+
 <main>
   <div id='home'>
     <h1>Hello, I'm Meghan Hein.</h1>
     <h1>I'm a full-stack web developer</h1>
     <button on:click|preventDefault={() => scroll()}>click here</button>
   </div>
+  <Nav/>
+  <span>{ $y }</span>
   <About/>
   <Portfolio/>
   <Contact/>
