@@ -1,5 +1,6 @@
 <script>
   import About from './About.svelte'
+  import Portfolio from './Portfolio.svelte'
 
   function scroll() {
     let elmnt = document.getElementById('about');
@@ -37,3 +38,4 @@
 </main>
 
 <About/>
+<Portfolio/>
