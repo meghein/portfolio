@@ -2,7 +2,7 @@
   import { y } from './stores.js';
   import Nav from './Nav.svelte'
   import About from './About.svelte'
-  import Portfolio from './Portfolio.svelte'
+  import Projects from './Projects.svelte'
   import Contact from './Contact.svelte'
 
   function scroll() {
@@ -46,6 +46,6 @@
   </div>
   <Nav/>
   <About/>
-  <Portfolio/>
+  <Projects/>
   <Contact/>
 </main>

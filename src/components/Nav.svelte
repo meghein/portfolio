@@ -50,7 +50,7 @@
   <ul id="nav-items" class="{ $y >= navY ? 'fixed' : '' }" bind:this={nav}>
     <li><a href="#home" class="item" on:click|preventDefault={() => (scroll('home'))}>Home</a></li>
     <li><a href="#about" class="item" on:click|preventDefault={() => (scroll('about'))}>About</a></li>
-    <li><a href="#portfolio" class="item" on:click|preventDefault={() => (scroll('portfolio'))}>Portfolio</a></li>
+    <li><a href="#projects" class="item" on:click|preventDefault={() => (scroll('projects'))}>Projects</a></li>
     <li><a href="#contact" class="item" on:click|preventDefault={() => (scroll('contact'))}>Contact</a></li>
   </ul>
 </nav>
