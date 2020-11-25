@@ -2,17 +2,17 @@
   import { y } from './stores.js';
   import { onMount } from "svelte";
   
-  let fix, add
+  let nav, navY
 
   onMount(() => {
-    add = fix.getBoundingClientRect().y
+    navY = nav.getBoundingClientRect().y + window.pageYOffset
   })
-  
+
   function scroll(page) {
     let elmnt = document.getElementById(page);
     elmnt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
-  
+
 </script>
 
 <style>
@@ -27,8 +27,7 @@
   }
 </style>
 
-<!-- class="{fix  ? 'fixed' : ''}"  -->
-<ul id="nav" class="{ $y >= add ? 'fixed' : '' }" bind:this={fix}>
+<ul id="nav" class="{ $y >= navY ? 'fixed' : '' }" bind:this={nav}>
 	<li><a href="/" on:click|preventDefault={() => (scroll('home'))}>Home</a></li>
 	<li><a href="/" on:click|preventDefault={() => (scroll('about'))}>About</a></li>
 	<li><a href="/" on:click|preventDefault={() => (scroll('portfolio'))}>Portfolio</a></li>

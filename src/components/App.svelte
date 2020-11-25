@@ -9,6 +9,8 @@
     let elmnt = document.getElementById('about');
     elmnt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+
+
 </script>
 
 <style>
