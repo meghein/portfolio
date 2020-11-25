@@ -10,7 +10,6 @@
 </style>
 
 <div id='about'>
-  <Nav/>
   <h1>ABOUT</h1>
   <img {src} alt="kawaii">
 </div>

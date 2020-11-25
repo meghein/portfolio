@@ -9,6 +9,5 @@
 </style>
 
 <div id='contact'>
-  <Nav/>
   <h1>CONTACT</h1>
 </div>

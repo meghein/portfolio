@@ -9,6 +9,5 @@
 </style>
 
 <div id='portfolio'>
-  <Nav/>
   <h1>PORTFOLIO</h1>
 </div>
