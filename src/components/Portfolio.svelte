@@ -1,10 +1,15 @@
 <script>
-  import Nav from './Nav.svelte'
+  
 </script>
 
 <style>
   #portfolio {
-    min-height: 100vh;
+    min-height: 95vh;
+    border: 1px dotted red;
+    margin-top: 80px;
+  }
+  #portfolio h1 {
+    margin-top: 50px;
   }
 </style>
 

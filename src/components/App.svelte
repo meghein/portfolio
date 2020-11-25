@@ -6,10 +6,10 @@
   import Contact from './Contact.svelte'
 
   function scroll() {
-    let elmnt = document.getElementById('about');
-    elmnt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    document
+      .getElementById('about')
+      .scrollIntoView({ behavior: 'smooth', block: 'end' });
   }
-
 
 </script>
 
@@ -45,7 +45,6 @@
     <button on:click|preventDefault={() => scroll()}>click here</button>
   </div>
   <Nav/>
-  <span>{ $y }</span>
   <About/>
   <Portfolio/>
   <Contact/>

@@ -1,10 +1,15 @@
 <script>
-  import Nav from './Nav.svelte'
+  
 </script>
 
 <style>
   #contact {
     min-height: 100vh;
+    border: 1px dotted red;
+    margin-top: 80px;
+  }
+  #contact h1 {
+    margin-top: 50px;
   }
 </style>
 
