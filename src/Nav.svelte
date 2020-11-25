@@ -1,20 +1,11 @@
 <script>
-	export let nav = 1;
-  
   function scroll(page) {
     let elmnt = document.getElementById(page);
     elmnt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
-
 </script>
 
 <style>
-  /* ul#nav {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  } */
 	ul#nav li{
 		display : inline;
     padding: 1em;
