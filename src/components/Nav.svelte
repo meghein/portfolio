@@ -4,19 +4,22 @@
   
   let nav, navY
   
+  // set view height variable for use in conditional scrolling attrs:
   onMount(() => {
     navY = nav.getBoundingClientRect().y + window.pageYOffset
   })
 
+  // change css for nav items on scroll
   afterUpdate(() => {
     const items = document.getElementsByClassName('item')
     for (const item of items) {
-      item.setAttribute('style', 'color: inherit')
       const tag = item.href.split('#').pop()
       const pageTitle = document.getElementById(tag).getElementsByTagName('h1')
       const pageInView = pageTitle[0].getBoundingClientRect().top
       if (pageInView < navY && pageInView > -80) {
         item.setAttribute('style', 'color: red')
+      } else {
+        item.setAttribute('style', 'color: inherit')
       }
     }
   })
@@ -37,8 +40,11 @@
     padding: 1em;
     font-size: 1.5em;
 	}
-  #nav-items li a:hover {
-    color: red;
+  #nav-items:hover > li:not(:hover) {
+    opacity: 0.5;
+  }
+  a {
+    text-decoration: none;
   }
   .fixed {
     position: fixed;
