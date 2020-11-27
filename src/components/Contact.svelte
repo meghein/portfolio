@@ -44,7 +44,7 @@
       message.setAttribute('style', 'visibility: hidden')
     }
   }
-  
+
   afterUpdate(() => {
     confirmationMsg()
   })
@@ -78,8 +78,7 @@
 </style>
 
 <div id='contact'>
-  <h1>CONTACT</h1>
-  <h3>Have a question or want to work together?</h3>
+  <h1><i>Drop me a line,</i> I'd love to hear from you:</h1>
   <form id="contact-form" on:submit|preventDefault="{sendEmail}">
     <input required type="name" id="name" placeholder="Name"/>
     <input required type="email" id="email" placeholder="Enter email"/>
