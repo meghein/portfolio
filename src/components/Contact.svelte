@@ -12,13 +12,17 @@
       message: e.target.message.value,
     }
 
+    confirmation = 
+        `<h2>Thanks for reaching out ${contact.name}!</h2>
+          <p><i>I appreciate that you took the time to write and will get back to you as soon as possible. Have a great day ahead!<i></p>`
+
     emailjs
     .send('gmail', apiKeys.TEMPLATE_ID, contact, apiKeys.USER_ID)
     .then(result => {
       console.log(result.text)
       confirmation = 
-        `<h2>Thanks ${e.target.name.value}! Your message has been sent.</h2>
-          <h4><i>I appreciate that you’ve taken the time to write and I'll get back to you very soon!<i></h4>`
+        `<h2>Thanks for reaching out ${contact.name}!</h2>
+         <p><i>I appreciate that you took the time to write and will get back to you as soon as possible. Have a great day ahead!<i></p>`
     }, error => {
       console.log(error.text)
       confirmation = '<h4>An error occurred, please try again</h4>'
@@ -30,7 +34,7 @@
     if (confirmation) {
       message.setAttribute('style', 'visibility: visible')
       document.getElementById('contact-form').reset()
-      
+
       setTimeout(() => {
         message.setAttribute('style', 'visibility: hidden')
         confirmation = undefined
@@ -51,26 +55,34 @@
     min-height: 100vh;
     border: 1px dotted red;
     margin-top: 80px;
+    text-align: center;
   }
   #contact h1 {
     margin-top: 50px;
   }
   form {
+    display: grid;
     margin: auto;
     width: 60%;
-    display: grid;
+  }
+  textarea {
+    min-height: 8em;
   }
   #confirm-msg {
-    text-align: center;
+    margin: auto;
+    width: 60%;
+
   }
+  
 </style>
 
 <div id='contact'>
   <h1>CONTACT</h1>
+  <h3>Have a question or want to work together?</h3>
   <form id="contact-form" on:submit|preventDefault="{sendEmail}">
     <input required type="name" id="name" placeholder="Name"/>
     <input required type="email" id="email" placeholder="Enter email"/>
-    <textarea required type="text" id="message" placeholder="Your Message"/>
+    <textarea required type="text" id="message" placeholder="Your message"/>
     <button type="submit">Send</button>
   </form>
   <div id='confirm-msg'>{@html confirmation}</div>
