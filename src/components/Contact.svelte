@@ -53,7 +53,7 @@
 
 <style>
   #contact {
-    min-height: 100vh;
+    min-height: 80vh;
     border: 1px dotted red;
     margin-top: 80px;
     text-align: center;

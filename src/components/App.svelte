@@ -4,6 +4,7 @@
   import About from './About.svelte'
   import Projects from './Projects.svelte'
   import Contact from './Contact.svelte'
+  import Footer from './Footer.svelte'
 
   function scroll() {
     document
@@ -48,4 +49,5 @@
   <About/>
   <Projects/>
   <Contact/>
+  <Footer/>
 </main>
