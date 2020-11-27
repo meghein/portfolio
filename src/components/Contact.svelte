@@ -5,7 +5,7 @@
 
   let confirmation
 
-  const sendEmail = e => {
+  function sendEmail(e) {
     const contact = {
       name: e.target.name.value,
       email: e.target.email.value,
@@ -44,6 +44,7 @@
       message.setAttribute('style', 'visibility: hidden')
     }
   }
+  
   afterUpdate(() => {
     confirmationMsg()
   })
