@@ -1,12 +1,13 @@
 <script>
   import {clickOutside} from './clickOutside.js';
+  import { fade, fly } from 'svelte/transition';
   
   let modal = false;
-  let show =  false;
+  let show = {};
   let id;
 
   const projects = [
-    {id:'trivia', name:'Trivia Tree', image: 'images/tandem-test.png'},
+    {id:'trivia', name:'Trivia Tree', image: 'images/tandem-test.png', stack: 'ReactJS'},
     {id:'unity', name:'project2'},
     {id:2, name:'project3'},
     {id:3, name:'project4'},
@@ -28,7 +29,6 @@
   }
 
   function toggleShow(e) {
-    // console.log(e.target.id)
     show[e.target.id] =! show[e.target.id]
   }
 
@@ -37,7 +37,7 @@
 <style type="text/scss">
   #projects {
     min-height: 95vh;
-    border: 1px dotted red;
+    
     margin-top: 80px;
     h1 {
     margin-top: 50px;
@@ -58,13 +58,35 @@
         padding-inline-start: 0;
         width: 100%;
         li {
-          border: 1px dotted red;
+          
           min-width: 250px;
           min-height: 250px;
-          button {
-            opacity: 0;
+          div {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.849);
+            padding: 0;
             width: 100%;
             height: 100%;
+            h2 {
+              align-self: end;
+              margin: 0;
+            }
+            button {
+              justify-self: center;
+              width: 50%;
+              height: 50%;
+              &:hover{ 
+              animation: pulse 2s infinite;
+              animation-timing-function: linear;   
+              }
+              @keyframes pulse {
+              0% { transform: scale(1); }
+              50% { transform: scale(1.2); }
+              100% { transform: scale(1); }
+              }
+            }
           }
         }
       }
@@ -99,7 +121,7 @@
   <h1>PROJECTS</h1>
   <div id='project-list'>
     <ul>
-      {#each projects as {id, name, image} }
+      {#each projects as {id, name, image, stack} }
         <li
           id={id}
           on:mouseenter={toggleShow}
@@ -108,11 +130,13 @@
           background-image: url('{image}');
           background-size: 100% 100%;
         ">
-          <button on:click={toggleModal} value={id}>
-            {#if show[id]}
-            {name}
-            {/if}
-          </button>
+        {#if show[id]}
+        <div transition:fade>
+          <h2 transition:fly="{{ x: -100, duration: 1500 }}">{name}</h2>
+          <p transition:fly="{{ x: 100, duration: 1500 }}">{stack}</p>
+          <button on:click={toggleModal} value={id}>LEARN MORE</button>
+        </div>
+        {/if}
         </li>
       {/each}
     </ul>
@@ -128,5 +152,4 @@
       </div>
     </div>
   {/if}
-  
 </div>
