@@ -1,4 +1,5 @@
 <script>
+  import { watchResize } from "svelte-watch-resize";
   import { y } from './stores.js';
   import Nav from './Nav.svelte'
   import About from './About.svelte'
@@ -6,12 +7,17 @@
   import Contact from './Contact.svelte'
   import Footer from './Footer.svelte'
 
+  let windowHeight
+
   function scroll() {
     document
       .getElementById('about')
       .scrollIntoView({ behavior: 'smooth', block: 'end' });
   }
 
+  function handleResize(node) {
+    windowHeight = node.clientHeight + 16
+  }
 </script>
 
 <style type="text/scss">
@@ -33,14 +39,16 @@
 </style>
 
 <svelte:window bind:scrollY={$y}/>
+<!-- <svelte:window use:watchResize={handleResize}/> -->
 
 <main>
-  <div id='home'>
+  <div id='home' use:watchResize={handleResize}>
     <h1>Hello, I'm Meghan Hein.</h1>
     <h1>I'm a full-stack web developer</h1>
     <button on:click|preventDefault={() => scroll()}>click here</button>
+    <span>{windowHeight}</span>
   </div>
-  <Nav/>
+  <Nav navY={windowHeight}/>
   <About/>
   <Projects/>
   <Contact/>

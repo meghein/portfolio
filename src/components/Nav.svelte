@@ -1,23 +1,22 @@
 <script>
   import { y } from './stores.js';
-  import { afterUpdate, onMount } from "svelte";
+  import { afterUpdate } from "svelte";
   
-  let nav, navY
-  const items = ['home', 'about', 'projects', 'contact']
+  // set dynamically from App windowHeight
+  // (controls where the nav sits in relation the the viewport):
+  export let navY
 
-  // set view height variable for use in conditional scrolling attrs:
-  onMount(() => {
-    navY = nav.getBoundingClientRect().y + window.pageYOffset
-  })
+  const list = ['home', 'about', 'projects', 'contact']
 
-  // change css for nav items on scroll:
   afterUpdate(() => {
     const items = document.getElementsByClassName('item')
+    
     for (const item of items) {
       const tag = item.href.split('#').pop()
       const pageTitle = document.getElementById(tag).getElementsByTagName('h1')
       const pageInView = pageTitle[0].getBoundingClientRect().top
-      if (pageInView < navY && pageInView > -80) {
+      // console.log(tag, pageInView, navY)
+      if (pageInView < navY - 280 && pageInView >  200 - navY ) {
         item.setAttribute('style', 'color: #6a040f')
       } else {
         item.setAttribute('style', 'color: inherit')
@@ -64,8 +63,8 @@
 </style>
 
 <nav id="main-nav">
-  <ul id="nav-items" class="{ $y >= navY ? 'fixed' : '' }" bind:this={nav}>
-    {#each items as item }
+  <ul id="nav-items" class="{ $y >= navY ? 'fixed' : '' }">
+    {#each list as item }
       <li>
         <a href="#{item}" class="item" on:click|preventDefault={() => (scroll({item}))}>
           {item.toUpperCase()}
