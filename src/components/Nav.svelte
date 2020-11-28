@@ -33,7 +33,17 @@
 </script>
 
 <style type="text/scss">
-	#nav-items{
+  #main-nav {
+    position: absolute;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  #nav-items{
+    padding-inline-start: 0;
     li{
       display : inline;
       padding: 1em;
@@ -49,6 +59,7 @@
   .fixed {
     position: fixed;
     top: 0;
+    width: 100%;
   }
 </style>
 

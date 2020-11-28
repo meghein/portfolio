@@ -5,9 +5,9 @@
 <style type="text/scss">
   #about {
     min-height: 95vh;
-    margin-top: 80px;
+    margin-top: 60px;
     h1 {
-    padding-top: 50px;
+    padding-top: 30px;
     }
   }
 </style>
