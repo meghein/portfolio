@@ -5,17 +5,21 @@ html, body {
 }
 
 body {
-	background-color: #e09f3e;
-	color: #335c67;
-	margin: 0;
-	padding: 8px;
+	background-color: #181818;
+	/* background-image: linear-gradient(#FBEEC1, #da862d); */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	border: 10px solid #b3a577;
+	margin:0;
 	box-sizing: border-box;
+	/* color: #011f51; */
+	color: #b3a577;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	
 }
 
 a, a:visited {
-	color: #335c67;
+	color: #6a040f;
 	text-decoration: none;
 }
 
@@ -34,9 +38,9 @@ input, button, select, textarea {
 }
 
 button, button:focus {
-	color: #540b0e;
+	color: #da862d;
 	background-color: inherit;
-	border: 2px solid #540b0e;
+	border: 1px dotted #da862d;
 	border-radius: 25px;
 	padding: 0px 40px 0px 40px;
 	outline: none;

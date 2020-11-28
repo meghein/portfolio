@@ -14,5 +14,5 @@
 
 <div id='about'>
   <h1>ABOUT</h1>
-  <img {src} alt="kawaii">
+  <!-- <img {src} alt="kawaii"> -->
 </div>

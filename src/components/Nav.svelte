@@ -18,7 +18,7 @@
       const pageTitle = document.getElementById(tag).getElementsByTagName('h1')
       const pageInView = pageTitle[0].getBoundingClientRect().top
       if (pageInView < navY && pageInView > -80) {
-        item.setAttribute('style', 'color: #540b0e')
+        item.setAttribute('style', 'color: #6a040f')
       } else {
         item.setAttribute('style', 'color: inherit')
       }

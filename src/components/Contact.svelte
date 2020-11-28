@@ -54,17 +54,26 @@
 <style type="text/scss">
   #contact {
     min-height: 80vh;
-    
     margin-top: 80px;
     text-align: center;
     h1 {
-    margin-top: 50px;
+      margin-top: 50px;
+      color:#6a040f;
+      i {
+        color:#b3a577;
+      }
     }
     form {
       display: grid;
       margin: auto;
       width: 60%;
+      input {
+        background-color: inherit;
+        border: 1px dotted #da862d; 
+      }
       textarea {
+        background-color: inherit;
+        border: 1px dotted #da862d;
         min-height: 8em;
       }
     }
@@ -76,12 +85,14 @@
 </style>
 
 <div id='contact'>
-  <h1><i>Drop me a line,</i> I'd love to hear from you:</h1>
-  <form id="contact-form" on:submit|preventDefault="{sendEmail}">
-    <input required type="name" id="name" placeholder="Name"/>
-    <input required type="email" id="email" placeholder="Enter email"/>
-    <textarea required type="text" id="message" placeholder="Your message"/>
-    <button type="submit">Send</button>
-  </form>
-  <div id='confirm-msg'>{@html confirmation}</div>
+  <div class='inner-contact'>
+    <h1><i>Drop me a line,</i> I'd love to hear from you:</h1>
+    <form id="contact-form" on:submit|preventDefault="{sendEmail}">
+      <input required type="name" id="name" placeholder="Name"/>
+      <input required type="email" id="email" placeholder="Enter email"/>
+      <textarea required type="text" id="message" placeholder="Your message"/>
+      <button type="submit">Send</button>
+    </form>
+    <div id='confirm-msg'>{@html confirmation}</div>
+  </div>
 </div>
