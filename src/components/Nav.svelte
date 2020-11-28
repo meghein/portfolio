@@ -3,32 +3,31 @@
   import { afterUpdate } from "svelte";
   
   // set dynamically from App windowHeight
-  // (controls where the nav sits in relation the the viewport):
-  export let navY
+  // controls where the nav sits in relation the the viewport:
+  export let navY;
 
-  const list = ['home', 'about', 'projects', 'contact']
+  const list = ['home', 'about', 'projects', 'contact'];
 
   afterUpdate(() => {
-    const items = document.getElementsByClassName('item')
-
+    const items = document.getElementsByClassName('item');
     for (const item of items) {
-      const tag = item.href.split('#').pop()
-      const pageTitle = document.getElementById(tag).getElementsByTagName('h1')
-      const pageInView = pageTitle[0].getBoundingClientRect().top
-      console.log(tag, pageInView, navY)
+      const tag = item.href.split('#').pop();
+      const pageTitle = document.getElementById(tag).getElementsByTagName('h1');
+      const pageInView = pageTitle[0].getBoundingClientRect().top;
       if (pageInView < navY/5 && pageInView > navY*-.75) {
         item.setAttribute('style', 'color: #6a040f')
       } else {
         item.setAttribute('style', 'color: inherit')
       }
     }
-  })
+  });
 
   function scroll(page) {
     document
       .getElementById(page.item)
       .scrollIntoView({ behavior: 'smooth', block: 'center'});
-  }
+  };
+
 </script>
 
 <style type="text/scss">
@@ -40,19 +39,16 @@
     left: 0;
     right: 0;
     text-align: center;
-  }
-  #nav-items{
-    padding-inline-start: 0;
-    li{
-      display : inline;
-      padding: 1em;
-      font-size: 1.5em;
-      a {
-        text-decoration: none;
+    #nav-items{
+      padding-inline-start: 0;
+      li{
+        display : inline;
+        padding: 1em;
+        font-size: 1.5em;
       }
-	  }
-    &:hover > li:not(:hover) {
-      opacity: 0.5;
+      &:hover > li:not(:hover) {
+        opacity: 0.5;
+      }
     }
   }
   .fixed {
