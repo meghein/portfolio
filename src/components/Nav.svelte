@@ -3,13 +3,14 @@
   import { afterUpdate, onMount } from "svelte";
   
   let nav, navY
-  
+  const items = ['home', 'about', 'projects', 'contact']
+
   // set view height variable for use in conditional scrolling attrs:
   onMount(() => {
     navY = nav.getBoundingClientRect().y + window.pageYOffset
   })
 
-  // change css for nav items on scroll
+  // change css for nav items on scroll:
   afterUpdate(() => {
     const items = document.getElementsByClassName('item')
     for (const item of items) {
@@ -29,9 +30,6 @@
       .getElementById(page)
       .scrollIntoView({ behavior: 'smooth', block: 'center'});
   }
-
-
-
 </script>
 
 <style type="text/scss">
@@ -56,10 +54,13 @@
 
 <nav id="main-nav">
   <ul id="nav-items" class="{ $y >= navY ? 'fixed' : '' }" bind:this={nav}>
-    <li><a href="#home" class="item" on:click|preventDefault={() => (scroll('home'))}>Home</a></li>
-    <li><a href="#about" class="item" on:click|preventDefault={() => (scroll('about'))}>About</a></li>
-    <li><a href="#projects" class="item" on:click|preventDefault={() => (scroll('projects'))}>Projects</a></li>
-    <li><a href="#contact" class="item" on:click|preventDefault={() => (scroll('contact'))}>Contact</a></li>
+    {#each items as item }
+      <li>
+        <a href="#{item}" class="item" on:click|preventDefault={() => (scroll({item}))}>
+          {item.toUpperCase()}
+        </a>
+      </li>
+    {/each}
   </ul>
 </nav>
 
