@@ -10,13 +10,13 @@
 
   afterUpdate(() => {
     const items = document.getElementsByClassName('item')
-    
+
     for (const item of items) {
       const tag = item.href.split('#').pop()
       const pageTitle = document.getElementById(tag).getElementsByTagName('h1')
       const pageInView = pageTitle[0].getBoundingClientRect().top
-      // console.log(tag, pageInView, navY)
-      if (pageInView < navY - 280 && pageInView >  200 - navY ) {
+      console.log(tag, pageInView, navY)
+      if (pageInView < navY/5 && pageInView > navY*-.75) {
         item.setAttribute('style', 'color: #6a040f')
       } else {
         item.setAttribute('style', 'color: inherit')
