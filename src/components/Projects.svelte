@@ -1,18 +1,37 @@
 <script>
   import {clickOutside} from './clickOutside.js';
+  
+  let modal = false;
+  let show =  false;
+  let id;
 
   const projects = [
-    {id:1, name:'project1'},
-    {id:2, name:'project2'},
-    {id:3, name:'project3'},
-    {id:4, name:'project4'},
+    {id:'trivia', name:'Trivia Tree', image: 'images/tandem-test.png'},
+    {id:'unity', name:'project2'},
+    {id:2, name:'project3'},
+    {id:3, name:'project4'},
   ]
-  let modal = false;
 
-	function toggle(e) {
-    console.log(e.target.value)
-		modal = !modal;
+  const preview = {
+    trivia: {
+      gif: 'https://github.com/meghein/tandem-test/blob/master/docs/desktop.gif?raw=true',
+      title: 'Trivia Tree',
+      description: 'A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms. The app is deployed using CircleCI and Netlify.',
+      site: 'https://the-tandem-test.netlify.app/'
+    },
+    unity: {}
+    }
+
+	function toggleModal(e) {
+    id = e.target.value
+    modal = !modal;
   }
+
+  function toggleShow(e) {
+    // console.log(e.target.id)
+    show[e.target.id] =! show[e.target.id]
+  }
+
 </script>
 
 <style type="text/scss">
@@ -42,6 +61,11 @@
           border: 1px dotted red;
           min-width: 250px;
           min-height: 250px;
+          button {
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
@@ -58,11 +82,14 @@
       background-color: rgb(0,0,0); /* Fallback color */
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
       #frame {
-        min-width: 600px;
-        min-height: 600px;
+        max-width: 600px;
+        max-height: 600px;
         background-color: white;
         display: grid;
-        place-items: center;
+        // place-items: center;
+        img {
+          max-width: 100%;
+        }
       }
     }
   }
@@ -72,10 +99,19 @@
   <h1>PROJECTS</h1>
   <div id='project-list'>
     <ul>
-      {#each projects as {id, name} }
-        <li >
-          <button on:click={toggle} value={id}>
+      {#each projects as {id, name, image} }
+        <li
+          id={id}
+          on:mouseenter={toggleShow}
+          on:mouseleave={toggleShow}
+          style="
+          background-image: url('{image}');
+          background-size: 100% 100%;
+        ">
+          <button on:click={toggleModal} value={id}>
+            {#if show[id]}
             {name}
+            {/if}
           </button>
         </li>
       {/each}
@@ -83,8 +119,12 @@
   </div>
   {#if modal}
     <div id="modal">
-      <div id='frame' use:clickOutside on:click_outside={toggle}>
-        <button on:click={toggle}>X</button>
+      <div id='frame' use:clickOutside on:click_outside={toggleModal}>
+        <img src='{preview[id].gif}' alt='{preview[id].title} preview'/>
+        <h2>{preview[id].title}</h2>
+        <p>{preview[id].description}</p>
+        <a href='{preview[id].site}' target="_blank" rel="noopener noreferrer">View Site</a>
+        <button on:click={toggleModal}>X</button>
       </div>
     </div>
   {/if}
