@@ -33,12 +33,10 @@
 <style type="text/scss">
   #main-nav {
     position: absolute;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
     left: 0;
     right: 0;
-    text-align: center;
+    width: 100%;
+    z-index: 10;
     #nav-items{
       padding-inline-start: 0;
       li{

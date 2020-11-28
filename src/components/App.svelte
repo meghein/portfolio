@@ -24,6 +24,7 @@
 <style type="text/scss">
 	#home {
     min-height: 100vh;
+    background: linear-gradient(165deg, #FBEEC1 60%,#da862d calc(60% + 2px));
     h1 {
       margin-bottom: 0;
       font-size: 4em;

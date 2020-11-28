@@ -4,8 +4,10 @@
 
 <style type="text/scss">
   #about {
+    position: relative;
     min-height: 95vh;
-    margin-top: 60px;
+    padding-top: 60px;
+    background: linear-gradient(195deg,#da862d 39%, #FBEEC1 calc(39% + 2px));
     h1 {
     padding-top: 40px;
     }
