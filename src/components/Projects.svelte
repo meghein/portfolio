@@ -1,5 +1,4 @@
 <script>
-  import Project1 from './Projects1.svelte'
   const projects = [
     {id: 1, name: 'project1'},
     {id:2, name: 'project2'},
@@ -13,48 +12,47 @@
 	}
 </script>
 
-<style>
+<style type="text/scss">
   #projects {
     min-height: 95vh;
     border: 1px dotted red;
     margin-top: 80px;
-  }
-  #projects h1 {
+    h1 {
     margin-top: 50px;
-  }
-  #project-list {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-content: center;
-  }
-  ul {
-    display: grid;
-    grid-template:
-      [row1-start] "a1 a2" 1fr[row1-end]
-      [row2-start] "a3 a4" 1fr [row2-end]
-      / 1fr 1fr;
-    gap: 10px;
-    list-style-type: none;
-    padding-inline-start: 0;
-    width: 100%
-    
-  }
-  li {
-    border: 1px dotted red;
-    min-width: 250px;
-    min-height: 250px;
-  }
-  #modal {
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    #project-list {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-content: center;
+      ul {
+        display: grid;
+        grid-template:
+          [row1-start] "a1 a2" 1fr[row1-end]
+          [row2-start] "a3 a4" 1fr [row2-end]
+          / 1fr 1fr;
+        gap: 10px;
+        list-style-type: none;
+        padding-inline-start: 0;
+        width: 100%;
+        li {
+          border: 1px dotted red;
+          min-width: 250px;
+          min-height: 250px;
+        }
+      }
+    }
+    #modal {
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
   }
 </style>
 
