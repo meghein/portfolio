@@ -37,7 +37,7 @@
 <style type="text/scss">
   #projects {
     min-height: 95vh;
-    margin-top: 80px;
+    background: linear-gradient(176deg, #FBEEC1 70%, #006f69 calc(70% + 2px));
     h1 {
     padding-top: 50px;
     }
@@ -56,6 +56,7 @@
         list-style-type: none;
         padding-inline-start: 0;
         width: 100%;
+        margin-bottom: 90px;
         li {
           border: 1px dotted #da862d;
           min-width: 250px;

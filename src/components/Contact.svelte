@@ -53,11 +53,10 @@
 
 <style type="text/scss">
   #contact {
-    min-height: 80vh;
-    margin-top: 80px;
-    text-align: center;
+    min-height: 75vh;
+    background: linear-gradient(176deg, #006f69 70%, #FBEEC1 calc(70% + 2px));
     h1 {
-      margin-top: 50px;
+      margin-top: 0;
       color:#6a040f;
       i {
         color:#b3a577;
@@ -67,14 +66,19 @@
       display: grid;
       margin: auto;
       width: 60%;
-      input {
+      input, textarea, button {
         background-color: inherit;
-        border: 1px dotted #da862d; 
+        // border: 1px dotted #da862d; 
+        border: 1px dotted #5c5c5c;
       }
       textarea {
-        background-color: inherit;
-        border: 1px dotted #da862d;
         min-height: 8em;
+      }
+      button {
+        margin: auto;
+        background-color: #5c5c5c;
+        color: #181818;
+        font-size: 1.2em;
       }
     }
     #confirm-msg {

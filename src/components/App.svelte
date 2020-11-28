@@ -24,6 +24,7 @@
     h1 {
       font-size: 4em;
       font-weight: 100;
+      // font-family: 'Syne', sans-serif; 
     }
     @media (min-width: 640px) {
       max-width: none;

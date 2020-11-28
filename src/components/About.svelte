@@ -7,7 +7,7 @@
     min-height: 95vh;
     margin-top: 60px;
     h1 {
-    padding-top: 30px;
+    padding-top: 40px;
     }
   }
 </style>
