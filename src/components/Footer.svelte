@@ -8,6 +8,8 @@ footer {
   display: flex;
   justify-content: space-between;
   position: sticky;
+  width: 80%;
+  margin: auto;
   border: 1px dotted red;
 }
 

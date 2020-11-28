@@ -16,17 +16,17 @@
         `<h2>Thanks for reaching out ${contact.name}!</h2>
           <p><i>I appreciate that you took the time to write and will get back to you as soon as possible. Have a great day ahead!<i></p>`
 
-    emailjs
-    .send('gmail', apiKeys.TEMPLATE_ID, contact, apiKeys.USER_ID)
-    .then(result => {
-      console.log(result.text)
-      confirmation = 
-        `<h2>Thanks for reaching out ${contact.name}!</h2>
-         <p><i>I appreciate that you took the time to write and will get back to you as soon as possible. Have a great day ahead!<i></p>`
-    }, error => {
-      console.log(error.text)
-      confirmation = '<h4>An error occurred, please try again</h4>'
-    })
+    // emailjs
+    // .send('gmail', apiKeys.TEMPLATE_ID, contact, apiKeys.USER_ID)
+    // .then(result => {
+    //   console.log(result.text)
+    //   confirmation = 
+    //     `<h2>Thanks for reaching out ${contact.name}!</h2>
+    //      <p><i>I appreciate that you took the time to write and will get back to you as soon as possible. Have a great day ahead!<i></p>`
+    // }, error => {
+    //   console.log(error.text)
+    //   confirmation = '<h4>An error occurred, please try again</h4>'
+    // })
   }
 
   function confirmationMsg() {
