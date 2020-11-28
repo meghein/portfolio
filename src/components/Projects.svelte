@@ -1,15 +1,18 @@
 <script>
+  import {clickOutside} from './clickOutside.js';
+
   const projects = [
-    {id: 1, name: 'project1'},
-    {id:2, name: 'project2'},
-    {id:3, name: 'project3'},
-    {id:4, name: 'project4'}
+    {id:1, name:'project1'},
+    {id:2, name:'project2'},
+    {id:3, name:'project3'},
+    {id:4, name:'project4'},
   ]
   let modal = false;
 
-	function toggle() {
+	function toggle(e) {
+    console.log(e.target.value)
 		modal = !modal;
-	}
+  }
 </script>
 
 <style type="text/scss">
@@ -43,15 +46,24 @@
       }
     }
     #modal {
+      display: grid;
+      place-items: center;
       position: fixed;
-      z-index: 100;
-      left: 0;
       top: 0;
+      left: 0;
+      z-index: 100;
       width: 100%;
       height: 100%;
       overflow: auto;
       background-color: rgb(0,0,0); /* Fallback color */
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      #frame {
+        min-width: 600px;
+        min-height: 600px;
+        background-color: white;
+        display: grid;
+        place-items: center;
+      }
     }
   }
 </style>
@@ -62,7 +74,7 @@
     <ul>
       {#each projects as {id, name} }
         <li >
-          <button on:click={toggle}>
+          <button on:click={toggle} value={id}>
             {name}
           </button>
         </li>
@@ -71,11 +83,9 @@
   </div>
   {#if modal}
     <div id="modal">
-      <iframe title='iframe'>
-        <button on:click={toggle}>
-          Log out
-        </button>
-      </iframe>
+      <div id='frame' use:clickOutside on:click_outside={toggle}>
+        <button on:click={toggle}>X</button>
+      </div>
     </div>
   {/if}
   
