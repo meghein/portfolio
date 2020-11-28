@@ -51,30 +51,28 @@
 
 </script>
 
-<style>
+<style type="text/scss">
   #contact {
     min-height: 80vh;
     border: 1px dotted red;
     margin-top: 80px;
     text-align: center;
-  }
-  #contact h1 {
+    h1 {
     margin-top: 50px;
-  }
-  form {
-    display: grid;
-    margin: auto;
-    width: 60%;
-  }
-  textarea {
-    min-height: 8em;
-  }
-  #confirm-msg {
-    margin: auto;
-    width: 60%;
-
-  }
-  
+    }
+    form {
+      display: grid;
+      margin: auto;
+      width: 60%;
+      textarea {
+        min-height: 8em;
+      }
+    }
+    #confirm-msg {
+      margin: auto;
+      width: 60%;
+    }
+  }  
 </style>
 
 <div id='contact'>

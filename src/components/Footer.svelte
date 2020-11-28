@@ -3,16 +3,15 @@
   import { githubAlt, linkedinSquare, instagram} from 'svelte-awesome/icons';
 </script>
 
-<style>
-footer {
-  display: flex;
-  justify-content: space-between;
-  position: sticky;
-  width: 80%;
-  margin: auto;
-  border: 1px dotted red;
-}
-
+<style type="text/scss">
+  footer {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    width: 80%;
+    margin: auto;
+    border: 1px dotted red;
+  }
 </style>
 
 <footer>

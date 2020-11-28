@@ -34,17 +34,19 @@
 
 </script>
 
-<style>
-	#nav-items li{
-		display : inline;
-    padding: 1em;
-    font-size: 1.5em;
-	}
-  #nav-items:hover > li:not(:hover) {
-    opacity: 0.5;
-  }
-  a {
-    text-decoration: none;
+<style type="text/scss">
+	#nav-items{
+    li{
+      display : inline;
+      padding: 1em;
+      font-size: 1.5em;
+      a {
+        text-decoration: none;
+      }
+	  }
+    &:hover > li:not(:hover) {
+      opacity: 0.5;
+    }
   }
   .fixed {
     position: fixed;

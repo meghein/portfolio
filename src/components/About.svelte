@@ -2,14 +2,14 @@
   let src = 'https://media.tenor.com/images/83d6a5ed40a24164dfe1e4e19fad23d9/tenor.gif'
 </script>
 
-<style>
+<style type="text/scss">
   #about {
     min-height: 95vh;
     border: 1px dotted red;
     margin-top: 80px;
-  }
-  #about h1 {
+    h1 {
     margin-top: 50px;
+    }
   }
 </style>
 
