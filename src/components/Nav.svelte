@@ -27,7 +27,7 @@
 
   function scroll(page) {
     document
-      .getElementById(page)
+      .getElementById(page.item)
       .scrollIntoView({ behavior: 'smooth', block: 'center'});
   }
 </script>
