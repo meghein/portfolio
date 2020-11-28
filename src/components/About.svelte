@@ -5,7 +5,6 @@
 <style type="text/scss">
   #about {
     min-height: 95vh;
-    border: 1px dotted red;
     margin-top: 80px;
     h1 {
     margin-top: 50px;

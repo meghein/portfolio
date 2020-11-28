@@ -54,7 +54,7 @@
 <style type="text/scss">
   #contact {
     min-height: 80vh;
-    border: 1px dotted red;
+    
     margin-top: 80px;
     text-align: center;
     h1 {
