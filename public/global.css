@@ -6,21 +6,12 @@ html, body {
 
 body {
 	background-color: #FBEEC1;
-	/* background-image: linear-gradient(#FBEEC1, #da862d); */
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	/* border: 10px solid #b3a577; */
 	margin: 0;
 	padding:0;
 	box-sizing: border-box;
 	color: #011f51;
-	/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
-	/* font-family: 'Philosopher', sans-serif; */
-	font-family: 'Syne', sans-serif;
-	/* font-family: 'Cardo', serif; */
-	text-align: center;
-	/* color: #b3a577; */
-	
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;	
 }
 
 a, a:visited {
@@ -43,13 +34,9 @@ input, button, select, textarea {
 }
 
 button, button:focus {
-	/* color: #da862d; */
-	color: #006f57;
+	color: #da862d;
 	background-color: inherit;
-	/* border: 1px dotted #da862d; */
-	border: 1px dotted #006f57;
-	border-radius: 25px;
-	padding: 0px 40px 0px 40px;
+	border: 1px solid #da862d;
 	outline: none;
 	box-shadow: none;
 	cursor: pointer;
