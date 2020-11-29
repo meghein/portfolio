@@ -29,7 +29,7 @@
   }
 
   function toggleShow(e) {
-    show[e.target.id] =! show[e.target.id]
+    show[e.target.id] = !show[e.target.id]
   }
 
 </script>

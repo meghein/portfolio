@@ -57,6 +57,7 @@
       // margin-top: 1.5em;
       width: 70px;
       height: 60px;
+      margin-bottom: 1.5em;
       animation: pulse 2.5s infinite;
       animation-timing-function: linear;   
       &:hover{ 
@@ -82,7 +83,7 @@
     </div>
     {#if showLinks}
     <div transition:fade>
-      <Links msg='Rather just connect?' style='color: #006F69'/>
+      <Links msg='Rather just connect?' size='1em' color='#006F69'/>
     </div>
     {/if}
   </div>
