@@ -1,6 +1,5 @@
 <script>
-  import Icon from 'svelte-awesome';
-  import { githubAlt, linkedinSquare, instagram} from 'svelte-awesome/icons';
+  import Links from './Links.svelte'
 </script>
 
 <style type="text/scss">
@@ -16,12 +15,5 @@
 
 <footer>
   <p className='name'>{@html '© 2020 Meghan Hein</br>All rights reserved'}</p>
-  <div className='links'>
-    <p>Let's connect!</p>
-    <div>
-      <a href='https://www.instagram.com/meghein/' target='_blank' rel='noreferrer'><Icon data={instagram} scale='2'/></a>
-      <a href='https://www.linkedin.com/in/meghan-hein/' target='_blank' rel='noreferrer'><Icon data={linkedinSquare} scale='2'/></a>
-      <a href='https://github.com/meghein' target='_blank' rel='noreferrer'><Icon data={githubAlt} scale='2'/></a>
-    </div>
-  </div>
+  <Links/>
 </footer>
