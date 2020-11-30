@@ -32,6 +32,7 @@
 
 <style type="text/scss">
   #main-nav {
+    font-family: 'Josefin Sans', sans-serif;
     position: absolute;
     left: 0;
     right: 0;

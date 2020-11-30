@@ -54,7 +54,8 @@
       border-bottom: 2px solid #DA862D;
     }
     button {
-      // margin-top: 1.5em;
+      color: #da862d;
+	    border: 1px solid #da862d;
       width: 70px;
       height: 60px;
       margin-bottom: 1.5em;

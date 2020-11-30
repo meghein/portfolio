@@ -36,7 +36,7 @@
 
 <style type="text/scss">
   #projects {
-    min-height: 95vh;
+    min-height: 100vh;
     background: linear-gradient(176deg, #FBEEC1 70%, #006f69 calc(70% + 2px));
     h1 {
     padding-top: 50px;
@@ -59,13 +59,13 @@
         margin-bottom: 90px;
         li {
           border: 1px dotted #da862d;
-          min-width: 250px;
+          min-width: 400px;
           min-height: 250px;
           div {
             display: grid;
             grid-template-rows: 1fr 1fr 1fr;
             text-align: center;
-            background-color: #da862dd2;
+            background-color: #da862d;
             padding: 0;
             width: 100%;
             height: 100%;
@@ -74,8 +74,10 @@
               margin: 0;
             }
             button {
+              border: 1px solid #006f69;
+              color: #006f69;
               justify-self: center;
-              width: 50%;
+              // width: 50%;
               height: 50%;
               &:hover{ 
               animation: pulse 2s infinite;

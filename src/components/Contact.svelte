@@ -57,7 +57,6 @@
     h1 {
       margin-top: 0;
       color:#6a040f;
-      font-family: 'Libre Baskerville', serif;
       i {
         color:#FBEEC1;
       }
