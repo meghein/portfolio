@@ -59,9 +59,11 @@
       height: 60px;
       margin-bottom: 1.5em;
       animation: pulse 2.5s infinite;
-      animation-timing-function: linear;   
+      animation-timing-function: linear;  
       &:hover{ 
         animation: none;
+        color: #FBEEC1;
+        background-color: #DA862D;
       }
       @keyframes pulse {
         0% { transform: scale(1); }
