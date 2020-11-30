@@ -18,7 +18,8 @@
       gif: 'https://github.com/meghein/tandem-test/blob/master/docs/desktop.gif?raw=true',
       title: 'Trivia Tree',
       description: 'A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms. The app is deployed using CircleCI and Netlify.',
-      site: 'https://the-tandem-test.netlify.app/'
+      site: 'https://the-tandem-test.netlify.app/',
+      github: 'https://github.com/meghein/tandem-test'
     },
     unity: {}
     }
@@ -106,13 +107,42 @@
       background-color: rgb(0,0,0); /* Fallback color */
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
       #frame {
+        padding: 1em;
+        margin: .5em;
+        // border: 5px solid #006f69;
         max-width: 600px;
         max-height: 600px;
-        background-color: white;
-        display: grid;
-        // place-items: center;
+        background-color: #FBEEC1;
+        // display: grid;
         img {
           max-width: 100%;
+        }
+        p {
+          padding-bottom: 1.5em;
+        }
+        .bottom-buttons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 1em;
+          .external {
+            border: 1px solid #6a040f;
+            // border-radius: 5px;
+            background-color: #6a040f;
+            color: #FBEEC1;
+            padding: .5em;
+            font-size: .8em;
+            &:hover {
+              background-color: #FBEEC1;
+              color: #6a040f;
+            }
+          }
+          #close {
+            border: none;
+            color: #6a040f;
+            font-size: 1.8em;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -149,8 +179,20 @@
         <img src='{preview[id].gif}' alt='{preview[id].title} preview'/>
         <h2>{preview[id].title}</h2>
         <p>{preview[id].description}</p>
-        <a href='{preview[id].site}' target="_blank" rel="noopener noreferrer">View Site</a>
-        <button on:click={toggleModal}>X</button>
+        <div class='bottom-buttons'>
+          <div>
+            <a id='site' class='external' href='{preview[id].site}' target="_blank" rel="noopener noreferrer">
+              Visit Site
+              <i class="fas fa-external-link-alt"/>
+            </a>
+            <a id='repo' class='external' href='{preview[id].github}' target="_blank" rel="noopener noreferrer">
+              View Repository
+              <i class="fab fa-github"/>
+            </a>
+          </div>
+          <i class="far fa-window-close"id='close' on:click={toggleModal}></i>
+          <!-- <i class="fas fa-times-circle" id='close' on:click={toggleModal}></i> -->
+        </div>
       </div>
     </div>
   {/if}
