@@ -8,7 +8,7 @@
 
   const list = ['home', 'about', 'projects', 'contact'];
 
-  afterUpdate(() => {
+  function handleHighlight() {
     const items = document.getElementsByClassName('item');
     for (const item of items) {
       const tag = item.href.split('#').pop();
@@ -20,13 +20,31 @@
         item.setAttribute('style', 'color: inherit')
       }
     }
-  });
+  }
+
+  function handleBackground() {
+    const menu = document.getElementById('main-nav');
+    const menuY = menu.getBoundingClientRect().top;
+    const fixedMenu = document.getElementById('nav-items')
+    if (menuY <= navY && menuY > -navY) {
+      fixedMenu.setAttribute('style', 'background-color: #DA862D;')
+    } else if (menuY <= -navY && menuY > -navY*2) {
+      fixedMenu.setAttribute('style', 'background-color: #FBEEC1;')
+    } else if (menuY <= -navY*2) {
+      fixedMenu.setAttribute('style', 'background-color: #006F69;')
+    }
+  }
 
   function scroll(page) {
     document
       .getElementById(page.item)
       .scrollIntoView({ behavior: 'smooth', block: 'center'});
   };
+  afterUpdate(() => {
+    handleHighlight();
+    handleBackground();
+  });
+
 
 </script>
 
@@ -40,6 +58,9 @@
     z-index: 10;
     #nav-items{
       padding-inline-start: 0;
+      padding-top: 1em;
+    padding-bottom: .5em;
+    margin: 0;
       li{
         display : inline;
         padding: 1em;
@@ -54,6 +75,9 @@
     position: fixed;
     top: 0;
     width: 100%;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    margin: 0;
   }
 </style>
 
