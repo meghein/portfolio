@@ -3,6 +3,7 @@
   import { fade } from 'svelte/transition';
   import { watchResize } from "svelte-watch-resize";
   import { y } from './stores.js';
+  import Symbols from './Symbols.svelte';
   import Nav from './Nav.svelte';
   import Links from './Links.svelte'
   import About from './About.svelte';
@@ -38,9 +39,6 @@
 	#home {
     min-height: 100vh;
     background: linear-gradient(165deg, #FBEEC1 60%,#DA862D calc(60% + 2px));
-    .inner-home {
-      place-self: center
-    }
     h1 {
       display: inline-block;
       padding-top: 2em;
@@ -55,7 +53,7 @@
     }
     button {
       color: #da862d;
-	    border: 1px solid #da862d;
+	    border: 2px solid #da862d;
       width: 70px;
       height: 60px;
       margin-bottom: 1.5em;
@@ -79,13 +77,14 @@
 
 <main>
   <div id='home' use:watchResize={handleResize}>
+    <Symbols/>
     <div class='inner-home'>
       <h1>I'm Meghan.</h1>
       <h2>a full stack web developer.</h2>
       <button on:click|preventDefault={() => scroll()}>Learn more </button>
     </div>
     {#if showLinks}
-    <div transition:fade>
+    <div class='home-links' transition:fade>
       <Links msg='Rather just connect?' size='1em' color='#006F69'/>
     </div>
     {/if}
