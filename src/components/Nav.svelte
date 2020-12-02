@@ -31,7 +31,6 @@
     if (topMenu <= -$windowHeight*1.9) {
       fixedMenu.setAttribute('style', 'background-color: #006F69;')
     }
-    console.log(topMenu, $windowHeight)
   }
 
   function scroll(page) {
