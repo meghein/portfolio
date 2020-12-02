@@ -24,7 +24,7 @@
   function scroll() {
     document
       .getElementById('about')
-      .scrollIntoView({ behavior: 'smooth', block: 'end' });
+      .scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   function handleResize(node) {
