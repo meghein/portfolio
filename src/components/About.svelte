@@ -33,7 +33,7 @@
 <div id='about'>
   <div id='scroll-about' class='top'/>
   {#if visible}
-  <h1 id='about-head' in:fly="{{ x: 1000, duration: 2000 }}" out:fade>
+  <h1 id='about-head' in:fly="{{ x: -1000, duration: 2000 }}" out:fade>
     ABOUT
   </h1>
   {/if}
