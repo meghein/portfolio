@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { watchResize } from "svelte-watch-resize";
-  import { y } from './stores.js';
+  import { y, windowHeight } from './stores.js';
   import Symbols from './Symbols.svelte';
   import Nav from './Nav.svelte';
   import Links from './Links.svelte'
@@ -11,7 +11,6 @@
   import Contact from './Contact.svelte';
   import Footer from './Footer.svelte';
 
-  let windowHeight;
   let showLinks = false;
 
   onMount(() => {
@@ -30,7 +29,7 @@
   };
 
   function handleResize(node) {
-    windowHeight = node.clientHeight;
+    $windowHeight = node.clientHeight;
   };
 
 </script>
@@ -89,7 +88,7 @@
     </div>
     {/if}
   </div>
-  <Nav navY={windowHeight}/>
+  <Nav/>
   <About/>
   <Projects/>
   <Contact/>

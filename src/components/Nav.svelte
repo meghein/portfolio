@@ -1,10 +1,6 @@
 <script>
-  import { y } from './stores.js';
+  import { y, windowHeight } from './stores.js';
   import { afterUpdate } from "svelte";
-  
-  // set dynamically from App windowHeight
-  // controls where the nav sits in relation the the viewport:
-  export let navY;
 
   const list = ['home', 'about', 'projects', 'contact'];
 
@@ -14,7 +10,7 @@
       const tag = item.href.split('#').pop();
       const pageTitle = document.getElementById(tag).getElementsByTagName('h1');
       const pageInView = pageTitle[0].getBoundingClientRect().top;
-      if (pageInView < navY/5 && pageInView > navY*-.75) {
+      if (pageInView < $windowHeight/5 && pageInView > $windowHeight*-.75) {
         item.setAttribute('style', 'color: #6a040f')
       } else {
         item.setAttribute('style', 'color: inherit')
@@ -24,15 +20,18 @@
 
   function handleBackground() {
     const menu = document.getElementById('main-nav');
-    const menuY = menu.getBoundingClientRect().top;
+    const topMenu = menu.getBoundingClientRect().top;
     const fixedMenu = document.getElementById('nav-items')
-    if (menuY <= navY && menuY > -navY) {
+    if (topMenu <= $windowHeight && topMenu > -$windowHeight) {
       fixedMenu.setAttribute('style', 'background-color: #DA862D;')
-    } else if (menuY <= -navY && menuY > -navY*2) {
+    }
+    if (topMenu <= -$windowHeight && topMenu > -$windowHeight*1.9) {
       fixedMenu.setAttribute('style', 'background-color: #FBEEC1;')
-    } else if (menuY <= -navY*2) {
+    }
+    if (topMenu <= -$windowHeight*1.9) {
       fixedMenu.setAttribute('style', 'background-color: #006F69;')
     }
+    console.log(topMenu, $windowHeight)
   }
 
   function scroll(page) {
@@ -82,7 +81,7 @@
 </style>
 
 <nav id="main-nav">
-  <ul id="nav-items" class="{ $y >= navY ? 'fixed' : '' }">
+  <ul id="nav-items" class="{ $y >= $windowHeight ? 'fixed' : '' }">
     {#each list as item }
       <li>
         <a href="#{item}" class="item" on:click|preventDefault={() => (scroll({item}))}>

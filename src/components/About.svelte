@@ -1,5 +1,19 @@
 <script>
-  let src = 'https://media.tenor.com/images/83d6a5ed40a24164dfe1e4e19fad23d9/tenor.gif'
+  import { afterUpdate } from "svelte";
+  import { fade, fly } from 'svelte/transition';
+  import { y, windowHeight } from './stores.js';
+
+  let visible = true;
+
+  afterUpdate(() => {
+    const header = document.getElementById('about-head');
+    const topHead = header.getBoundingClientRect().top;
+    // if (topHead < $windowHeight/5 && topHead > $windowHeight*-.75) {
+    //   visible = !visible
+    // }
+    console.log(header)
+  })
+  
 </script>
 
 <style type="text/scss">
@@ -15,6 +29,7 @@
 </style>
 
 <div id='about'>
-  <h1>ABOUT</h1>
-  <!-- <img {src} alt="kawaii"> -->
+{#if visible}
+  <h1 id='about-head' in:fly="{{ y: 200, duration: 2000 }}" out:fade>ABOUT</h1>
+{/if}
 </div>
