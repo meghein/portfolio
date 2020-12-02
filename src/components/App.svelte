@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, afterUpdate } from 'svelte';
   import { fade } from 'svelte/transition';
   import { watchResize } from "svelte-watch-resize";
   import { y, windowHeight } from './stores.js';
@@ -12,14 +12,13 @@
   import Footer from './Footer.svelte';
 
   let showLinks = false;
-
+  
   onMount(() => {
     setInterval(() => {
       setTimeout(() => {
         showLinks = !showLinks
       }, 5000)
     }, 10000)
-    // showLinks = !showLinks
   })
 
   function scroll() {

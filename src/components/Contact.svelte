@@ -1,9 +1,23 @@
 <script>
-  import emailjs from 'emailjs-com';
   import { afterUpdate } from 'svelte';
+  import { fade, fly } from 'svelte/transition';
+  import { y, windowHeight } from './stores.js';
   import apiKeys from '../apikeys';
+  import emailjs from 'emailjs-com';
 
   let confirmation;
+  let visible = false;
+
+  afterUpdate(() => {
+    const header = document.getElementById('scroll-contact');
+    let topHead = header.getBoundingClientRect().top;
+    $y
+    if (topHead < $windowHeight && topHead > $windowHeight*-.75) {
+      visible = true
+    } else {
+      visible = false
+    }
+  })
 
   function sendEmail(e) {
     const contact = {
@@ -110,9 +124,13 @@
 </style>
 
 <div id='contact'>
-  <div class='top'/>
+  <div id='scroll-contact' class='top'/>
   <div class='inner-contact'>
-    <h1><i>Drop me a line,</i> I'd love to hear from you:</h1>
+    {#if visible}
+      <h1 id='contact-head' in:fly="{{ x: -1000, duration: 2000 }}" out:fade>
+        <i>Drop me a line,</i> I'd love to hear from you:
+      </h1>
+    {/if}
     <form id="contact-form" on:submit|preventDefault="{sendEmail}">
       <input required type="name" id="name" placeholder="Name"/>
       <input required type="email" id="email" placeholder="Enter email"/>

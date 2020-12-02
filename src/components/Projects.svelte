@@ -1,6 +1,21 @@
 <script>
-  import {clickOutside} from './clickOutside.js';
+  import { afterUpdate } from "svelte";
   import { fade, fly } from 'svelte/transition';
+  import { y, windowHeight } from './stores.js';
+  import {clickOutside} from './clickOutside.js';
+
+  let visible = false;
+
+  afterUpdate(() => {
+    const header = document.getElementById('scroll-projects');
+    let topHead = header.getBoundingClientRect().top;
+    $y
+    if (topHead < $windowHeight && topHead > $windowHeight*-.75) {
+      visible = true
+    } else {
+      visible = false
+    }
+  })
   
   let modal = false;
   let show = {};
@@ -151,8 +166,12 @@
 </style>
 
 <div id='projects'>
-  <div class='top'/>
-  <h1>PROJECTS</h1>
+  <div id='scroll-projects' class='top'/>
+  {#if visible}
+    <h1 id='projects-head' in:fly="{{ x: 1000, duration: 2000 }}" out:fade>
+      PROJECTS
+    </h1>
+  {/if}
   <div id='project-list'>
     <ul>
       {#each projects as {id, name, image, stack} }

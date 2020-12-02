@@ -1,5 +1,5 @@
 <script>
-  import { afterUpdate, onMount } from "svelte";
+  import { afterUpdate } from "svelte";
   import { fade, fly } from 'svelte/transition';
   import { y, windowHeight } from './stores.js';
 
