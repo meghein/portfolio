@@ -43,8 +43,8 @@
     h1 {
       display: inline-block;
       padding-top: 2em;
-      padding-left: .5em;
-      padding-right: .5em;
+      padding-left: .25em;
+      padding-right: .25em;
       margin-bottom: 0;
       font-family: 'Libre Baskerville', serif;
       font-size: 4em;
@@ -81,7 +81,7 @@
     <div class='top'/>
     <Symbols/>
     <div class='inner-home'>
-      <h1>I'm Meghan.</h1>
+      <h1>I'm Meg.</h1>
       <h2>a full stack web developer.</h2>
       <button on:click|preventDefault={() => scroll()}>Learn more </button>
     </div>
