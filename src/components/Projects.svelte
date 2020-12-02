@@ -63,6 +63,7 @@
       height: 100%;
       display: grid;
       place-content: center;
+      // color: #006F69;
       ul {
         display: grid;
         grid-template:
@@ -75,7 +76,7 @@
         width: 100%;
         margin-bottom: 90px;
         li {
-          border: 1px dotted #da862d;
+          // border: 1px solid #011f51;
           min-width: 400px;
           min-height: 250px;
           div {
@@ -91,8 +92,10 @@
               margin: 0;
             }
             button {
-              border: 1px solid #006f69;
-              color: #006f69;
+              border: 1px solid #011f51;
+              // border: none;
+              background-color: #011f51;
+              color:#da862d;
               justify-self: center;
               // width: 50%;
               height: 50%;
@@ -142,12 +145,13 @@
           align-items: center;
           margin-top: 1em;
           .external {
-            border: 1px solid #6a040f;
+            border: 2.5px solid #6a040f;
             // border-radius: 5px;
             background-color: #6a040f;
             color: #FBEEC1;
             padding: .5em;
             font-size: .8em;
+            font-weight: bold;
             &:hover {
               background-color: #FBEEC1;
               color: #6a040f;
