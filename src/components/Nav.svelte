@@ -8,7 +8,8 @@
     const items = document.getElementsByClassName('item');
     for (const item of items) {
       const tag = item.href.split('#').pop();
-      const pageTitle = document.getElementById(tag).getElementsByTagName('h1');
+      const pageTitle = document.getElementById(tag).getElementsByClassName('top')
+      // console.log(pageTitle);
       const pageInView = pageTitle[0].getBoundingClientRect().top;
       if (pageInView < $windowHeight/5 && pageInView > $windowHeight*-.75) {
         item.setAttribute('style', 'color: #6a040f')
@@ -36,7 +37,7 @@
   function scroll(page) {
     document
       .getElementById(page.item)
-      .scrollIntoView({ behavior: 'smooth', block: 'center'});
+      .scrollIntoView({ behavior: 'smooth', block: 'start'});
   };
   afterUpdate(() => {
     handleHighlight();

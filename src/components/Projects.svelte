@@ -39,8 +39,9 @@
   #projects {
     min-height: 100vh;
     background: linear-gradient(176deg, #FBEEC1 70%, #006f69 calc(70% + 2px));
-    h1 {
+    .top {
     padding-top: 50px;
+    height: 0;
     }
     #project-list {
       width: 100%;
@@ -150,6 +151,7 @@
 </style>
 
 <div id='projects'>
+  <div class='top'/>
   <h1>PROJECTS</h1>
   <div id='project-list'>
     <ul>

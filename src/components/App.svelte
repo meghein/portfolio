@@ -38,6 +38,9 @@
 	#home {
     min-height: 100vh;
     background: linear-gradient(165deg, #FBEEC1 60%,#DA862D calc(60% + 2px));
+    .top {
+      height: 0;
+    }
     h1 {
       display: inline-block;
       padding-top: 2em;
@@ -76,6 +79,7 @@
 
 <main>
   <div id='home' use:watchResize={handleResize}>
+    <div class='top'/>
     <Symbols/>
     <div class='inner-home'>
       <h1>I'm Meghan.</h1>

@@ -1,5 +1,5 @@
 <script>
-  import { afterUpdate } from "svelte";
+  import { afterUpdate, onMount } from "svelte";
   import { fade, fly } from 'svelte/transition';
   import { y, windowHeight } from './stores.js';
 
@@ -8,11 +8,15 @@
   afterUpdate(() => {
     const header = document.getElementById('about-head');
     const topHead = header.getBoundingClientRect().top;
-    // if (topHead < $windowHeight/5 && topHead > $windowHeight*-.75) {
+    // if (topHead / $y > 2.5) {
     //   visible = !visible
     // }
-    console.log(header)
+    console.log(topHead, $y)
   })
+
+  // onMount(() => {
+  //   visible = !visible
+  // })
   
 </script>
 
@@ -22,14 +26,17 @@
     min-height: 95vh;
     padding-top: 60px;
     background: linear-gradient(195deg,#da862d 39%, #FBEEC1 calc(39% + 2px));
-    h1 {
-    padding-top: 40px;
+    .top {
+    height: 0px;
     }
   }
 </style>
 
 <div id='about'>
-{#if visible}
-  <h1 id='about-head' in:fly="{{ y: 200, duration: 2000 }}" out:fade>ABOUT</h1>
-{/if}
+  <div class='top'/>
+  {#if visible}
+  <h1 id='about-head' in:fly="{{ y: 200, duration: 2000 }}" out:fade>
+    ABOUT
+  </h1>
+  {/if}
 </div>

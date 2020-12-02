@@ -54,6 +54,9 @@
   #contact {
     min-height: 80vh;
     background: linear-gradient(176deg, #006f69 70%, #FBEEC1 calc(70% + 2px));
+    .top {
+      height: 0;
+    }
     h1 {
       margin-top: 0;
       color:#6a040f;
@@ -107,6 +110,7 @@
 </style>
 
 <div id='contact'>
+  <div class='top'/>
   <div class='inner-contact'>
     <h1><i>Drop me a line,</i> I'd love to hear from you:</h1>
     <form id="contact-form" on:submit|preventDefault="{sendEmail}">
