@@ -2,7 +2,7 @@
   import { afterUpdate } from 'svelte';
   import { fade, fly } from 'svelte/transition';
   import { y, windowHeight } from '../store.js';
-  import apiKeys from '../apikeys';
+  import apiKeys from '../helpers/apikeys';
   import emailjs from 'emailjs-com';
 
   let confirmation;
