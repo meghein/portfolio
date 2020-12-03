@@ -34,44 +34,7 @@
 </script>
 
 <style type="text/scss">
-	#home {
-    min-height: 100vh;
-    background: linear-gradient(165deg, #FBEEC1 60%,#DA862D calc(60% + 2px));
-    .top {
-      height: 0;
-    }
-    h1 {
-      display: inline-block;
-      padding-top: 2em;
-      padding-left: .25em;
-      padding-right: .25em;
-      margin-bottom: 0;
-      font-family: 'Libre Baskerville', serif;
-      font-size: 4em;
-      text-decoration: underline solid #DA862D;
-      text-decoration-thickness: 2px;
-      border-bottom: 2px solid #DA862D;
-    }
-    button {
-      color: #da862d;
-	    border: 2px solid #da862d;
-      width: 70px;
-      height: 60px;
-      margin-bottom: 1.5em;
-      animation: pulse 2.5s infinite;
-      animation-timing-function: linear;  
-      &:hover{ 
-        animation: none;
-        color: #FBEEC1;
-        background-color: #DA862D;
-      }
-      @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-      }
-    }
-  }
+	@import '../styles/App.scss';
 </style>
 
 <svelte:window bind:scrollY={$y}/>
