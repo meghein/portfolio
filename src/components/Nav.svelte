@@ -1,5 +1,5 @@
 <script>
-  import { y, windowHeight } from './stores.js';
+  import { y, windowHeight } from '../store.js';
   import { afterUpdate } from "svelte";
 
   const list = ['home', 'about', 'projects', 'contact'];

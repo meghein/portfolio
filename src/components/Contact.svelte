@@ -1,7 +1,7 @@
 <script>
   import { afterUpdate } from 'svelte';
   import { fade, fly } from 'svelte/transition';
-  import { y, windowHeight } from './stores.js';
+  import { y, windowHeight } from '../store.js';
   import apiKeys from '../apikeys';
   import emailjs from 'emailjs-com';
 
