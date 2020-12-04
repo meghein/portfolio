@@ -24,17 +24,22 @@
 			margin: auto;
 			padding: 1em;
 			a {
-				color: #167974
+				color: #30b8a1
 			}
 			button {
 				background-color: #FBEEC1;
 				border: 1px solid #FBECC1;
 				color: #011f51;
+				outline: none;
+  			transition: 1s ease-in-out;
 				cursor: pointer;
+
 				&:hover {
 					background-color: #011f51;
 					color: #FBECC1;
+					transition: 1s ease-in-out;
 				}
+				
 			}
 		}
 	}
