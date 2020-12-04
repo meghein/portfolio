@@ -2,7 +2,7 @@
   import { afterUpdate } from "svelte";
   import { fade, fly } from 'svelte/transition';
   import { y, windowHeight } from '../store.js';
-  import PdfViewer from 'svelte-pdf';
+  import {clickOutside} from '../helpers/clickOutside.js';
 
   let visible = false;
   let resume;
@@ -43,8 +43,17 @@
     <button on:click={toggleModal}>View my resume here</button>    
   </div>
   {#if resume}
-  <div id='resume' in:fly="{{ y: 1000, duration: 1000 }}" out:fly="{{ y: -1000, duration: 1000 }}">
-    <PdfViewer url='images/resume.pdf' close={toggleModal}/>
+  <div class='modal'>
+    <div
+      id='resume'
+      use:clickOutside on:click_outside={toggleModal}
+      in:fly="{{ y: 1000, duration: 1000 }}"
+      out:fly="{{ y: -1000, duration: 1000 }}"
+    >
+      <i id='close' on:click={toggleModal} class="far fa-times-circle"></i>
+      <iframe title='Meghan Hein 2020' src="images/resume.pdf" width='850px' height={window.innerHeight - 60}>
+      </iframe>
+    </div>
   </div>
   {/if}
 </div>
