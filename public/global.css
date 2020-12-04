@@ -10,12 +10,14 @@ body {
 	padding:0;
 	box-sizing: border-box;
 	color: #011f51;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Lato', sans-serif;
 	text-align: center;	
 }
 
 h1 {
-	font-family: 'Josefin Sans', sans-serif;
+	/* font-family: 'Lato', sans-serif; */
+	/* font-family: 'Quicksand', sans-serif; */
+	font-family: 'Playfair Display', serif;
 }
 
 a, a:visited {
