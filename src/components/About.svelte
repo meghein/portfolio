@@ -1,8 +1,9 @@
 <script>
   import { afterUpdate } from "svelte";
-  import { fade, fly, scale } from 'svelte/transition';
+  import { fade, fly, scale, blur } from 'svelte/transition';
   import { y, windowHeight } from '../store.js';
   import {clickOutside} from '../helpers/clickOutside.js';
+  import { elasticOut, expoInOut } from 'svelte/easing';
 
   let visible = false;
   let resume;
@@ -27,12 +28,15 @@
 <div id='about'>
   <div id='scroll-about' class='top'/>
   {#if visible}
-  <h1 id='about-head' in:fly="{{ x: -500, duration: 2000 }}" out:fade>
+  <h1 id='about-head' in:fly="{{ x: -500, duration: 3000 }}" out:fade>
     ABOUT
   </h1>
   <div id='profile'>
-    <img src="images/profile.jpeg" alt="my face" in:fade="{{delay: 1200}}" out:fly="{{x: -200, duration: 500}}">
-    <div id='bio' in:fly="{{x:200, duration: 1000, delay: 800}}" out:fade>
+    <img src="images/profile.jpeg" alt="my face" in:blur="{{duration: 1500, delay: 500}}" out:fly="{{x: -200, duration: 500}}">
+    <div
+      id='bio'
+      in:fly="{{x:200, duration: 1000, delay: 800}}"
+      out:fade>
       <p>Hi there! Thanks for visiting my portfolio!</p>
       
       <p>I'm a web developer with a diverse background ranging from direct action activism in the high seas to forging silver in the Bajio mountains of central Mexico. I recently graduated from <a href='https://www.lighthouselabs.ca/' target='_blank' rel='noreferrer'>Lighthouse Labs'</a> immersive web development boot camp, which reinforced my infatuation with the programmatic potential in shaping the future.</p>
