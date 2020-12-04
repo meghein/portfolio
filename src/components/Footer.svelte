@@ -21,7 +21,7 @@
   }
 </style>
 
-<footer>
+<footer id='footer'>
   <p className='name'>{@html '© 2020 Meghan Hein</br>All rights reserved'}</p>
   <Links/>
 </footer>
