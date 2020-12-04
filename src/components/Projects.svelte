@@ -23,9 +23,9 @@
 
   const projects = [
     {id:'trivia', name:'Trivia Tree', image: 'images/tandem-test.png', stack: 'ReactJS'},
-    {id:'unity', name:'project2'},
-    {id:2, name:'project3'},
-    {id:3, name:'project4'},
+    {id:'sureSheets', name:'project2'},
+    {id:'cayley', name:'Cayley Thomas', image: 'images/cayley.png', stack: 'ReactJS'},
+    {id:'tweeter', name:'Intergalatic Tweeter', image: 'images/tweeter.png', stack: 'HTML, CSS, jQuery, Node, MongoDB'},
   ]
 
   const preview = {
@@ -36,7 +36,21 @@
       site: 'https://the-tandem-test.netlify.app/',
       github: 'https://github.com/meghein/tandem-test'
     },
-    unity: {}
+    sureSheets: {},
+    tweeter: {
+      gif: 'images/tweeter.png',
+      title: 'Intergalatic Tweeter',
+      description: 'Tweeter is a simple, yet responsive and user-friendly, single-page Twitter clone. Built using HTML, CSS, JS, jQuery and AJAX for the front-end, and Node, Express and MongoDB for the back-end.',
+      // site: 'https://cayleythomas.com/',
+      github: 'https://github.com/meghein/tweeter'
+    },
+    cayley: {
+      gif: 'images/cayley.gif',
+      title: 'Cayley Thomas',
+      description: 'A custom built portfolio for Cayley Thomas, a multidisciplinary singer, songwriter and performer. Worked closely with artist to fine tune their vision.',
+      site: 'https://cayleythomas.com/',
+      github: 'https://github.com/meghein/cayley-thomas'
+    },
     }
 
 	function toggleModal(e) {
@@ -91,10 +105,12 @@
         <p>{preview[id].description}</p>
         <div class='bottom-buttons'>
           <div>
+            {#if preview[id].site}
             <a id='site' class='external' href='{preview[id].site}' target="_blank" rel="noopener noreferrer">
               Visit Site
               <i class="fas fa-external-link-alt"/>
             </a>
+            {/if}
             <a id='repo' class='external' href='{preview[id].github}' target="_blank" rel="noopener noreferrer">
               View Repository
               <i class="fab fa-github"/>
