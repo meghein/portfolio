@@ -2,6 +2,7 @@
   import { afterUpdate } from "svelte";
   import { fade, fly } from 'svelte/transition';
   import { y, windowHeight } from '../store.js';
+  import PdfViewer from 'svelte-pdf';
 
   let visible = false;
   let resume;
@@ -18,14 +19,10 @@
   })
 
   function toggleModal() {
-    resume = !resume;
+    resume = !resume
   }
   
 </script>
-
-<style type="text/scss">
-  @import '../styles/About.scss';
-</style>
 
 <div id='about'>
   <div id='scroll-about' class='top'/>
@@ -34,6 +31,7 @@
     ABOUT
   </h1>
   {/if}
+  <img src="https://i.pinimg.com/originals/b7/77/60/b7776009c68eeac18729480ac34f51a6.gif" alt="big mistake">
   <div id='bio'>
     <p>Hi there! Thanks for visiting my portfolio!</p>
     
@@ -42,12 +40,15 @@
     <p>Living on the westcoast of Canada, dwelling at the intersection of creativity and logic, and inspired equally by complex code and sleek design - I write code and fervently build upon my development dexterity every single day.</p>
     <p>Want to know more? <a href='https://www.coursereport.com/blog/how-meghan-became-a-digital-nomad-with-lighthouse-labs' target='_blank' rel='noreferrer'>Click here to read an interview </a>I did with Course Report after graduating from Lighthouse Labs.</p>
 
-    <button on:click={toggleModal}>View my resume here</button>
-      
+    <button on:click={toggleModal}>View my resume here</button>    
   </div>
   {#if resume}
-  <pdf-viewer>HELLO</pdf-viewer>
-  <iframe src="images/resume.pdf" frameborder="0" title='Meghan Hein 2020'/>
-  <!-- <a href='resume' target='_blank' rel='noreferrer'>View my resume here</a> -->
+  <div id='resume' in:fly="{{ y: 1000, duration: 1000 }}" out:fly="{{ y: -1000, duration: 1000 }}">
+    <PdfViewer url='images/resume.pdf' close={toggleModal}/>
+  </div>
   {/if}
 </div>
+
+<style type="text/scss">
+  @import '../styles/About.scss';
+</style>
