@@ -20,15 +20,13 @@
 
   function handleBackground() {
     const menu = document.getElementById('main-nav');
-    const topMenu = menu.getBoundingClientRect().top;
+    const topMenu = Math.round(menu.getBoundingClientRect().top);
     const fixedMenu = document.getElementById('nav-items')
     if (topMenu <= $windowHeight && topMenu > -$windowHeight) {
       fixedMenu.setAttribute('style', 'background-color: #DA862D;')
-    }
-    if (topMenu <= -$windowHeight && topMenu > -$windowHeight*1.9) {
+    } else if (topMenu <= -$windowHeight && topMenu > Math.round(-$windowHeight*1.75)) {
       fixedMenu.setAttribute('style', 'background-color: #FBEEC1;')
-    }
-    if (topMenu <= -$windowHeight*1.9) {
+    } else if (topMenu <= Math.round(-$windowHeight*1.8) ) {
       fixedMenu.setAttribute('style', 'background-color: #006F69;')
     }
   }

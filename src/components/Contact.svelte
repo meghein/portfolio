@@ -51,7 +51,7 @@
       setTimeout(() => {
         message.setAttribute('style', 'visibility: hidden');
         confirmation = undefined;
-      }, 5000);
+      }, 8000);
 
     } else {
       message.setAttribute('style', 'visibility: hidden');
