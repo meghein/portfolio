@@ -22,21 +22,27 @@
   let id;
 
   const projects = [
-    {id:'trivia', name:'Trivia Tree', image: 'images/tandem-test.png', stack: 'ReactJS'},
-    {id:'sureSheets', name:'project2'},
+    {id:'trivia', name:'Trivia Tree', image: 'images/trivia.png', stack: 'ReactJS'},
+    {id:'sureSheets', name:'SureSheets', image: '', stack: 'ReactJS - KonvaJS, Cloudinary, Node - Express'},
     {id:'cayley', name:'Cayley Thomas', image: 'images/cayley.png', stack: 'ReactJS'},
     {id:'tweeter', name:'Intergalatic Tweeter', image: 'images/tweeter.png', stack: 'HTML, CSS, jQuery, Node, MongoDB'},
   ]
 
   const preview = {
     trivia: {
-      gif: 'https://github.com/meghein/tandem-test/blob/master/docs/desktop.gif?raw=true',
+      gif: 'images/trivia.gif',
       title: 'Trivia Tree',
-      description: 'A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms. The app is deployed using CircleCI and Netlify.',
-      site: 'https://the-tandem-test.netlify.app/',
-      github: 'https://github.com/meghein/tandem-test'
+      description: 'A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms.',
+      site: 'https://trivia-tree.netlify.app/',
+      github: 'https://github.com/meghein/trivia-tree'
     },
-    sureSheets: {},
+    sureSheets: {
+      gif: 'images/trivia.gif',
+      title: 'Trivia Tree',
+      description: 'A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms.',
+      site: 'https://trivia-tree.netlify.app/',
+      github: 'https://github.com/meghein/trivia-tree'
+    },
     tweeter: {
       gif: 'images/tweeter.png',
       title: 'Intergalatic Tweeter',
