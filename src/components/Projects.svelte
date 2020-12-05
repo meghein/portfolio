@@ -23,7 +23,7 @@
 
   const projects = [
     {id:'trivia', name:'Trivia Tree', image: 'images/trivia.png', stack: 'ReactJS'},
-    {id:'sureSheets', name:'SureSheets', image: '', stack: 'ReactJS - KonvaJS, Cloudinary, Node - Express'},
+    {id:'sureSheets', name:'SureSheets', image: 'images/sheets.png', stack: 'ReactJS - KonvaJS, Cloudinary, Node - Express'},
     {id:'cayley', name:'Cayley Thomas', image: 'images/cayley.png', stack: 'ReactJS'},
     {id:'tweeter', name:'Intergalatic Tweeter', image: 'images/tweeter.png', stack: 'HTML, CSS, jQuery, Node, MongoDB'},
   ]
@@ -37,11 +37,10 @@
       github: 'https://github.com/meghein/trivia-tree'
     },
     sureSheets: {
-      gif: 'images/trivia.gif',
-      title: 'Trivia Tree',
-      description: 'A client-side SPA (single-page app) built with ReactJS for quick and simple quiz fun across platforms.',
-      site: 'https://trivia-tree.netlify.app/',
-      github: 'https://github.com/meghein/trivia-tree'
+      gif: 'images/sheets.gif',
+      title: 'Sure Sheets',
+      description: 'Sure Sheets is a system for taking your underutilized screenshots and capturing that all-important textual data for use in an infographic-styled sheet. Whether you’re trying to study or just trying to keep track of those meeting minutes from a lazy Friday afternoon, you can count on NERv05 and TESS to help you organize your work.',
+      github: 'https://github.com/meghein/sure-sheets'
     },
     tweeter: {
       gif: 'images/tweeter.png',
