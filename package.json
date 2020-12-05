@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "portfolio",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -20,8 +20,6 @@
     "emailjs-com": "^2.6.4",
     "node-sass": "^5.0.0",
     "sirv-cli": "^1.0.0",
-    "svelte-awesome": "^2.3.0",
-    "svelte-pdf": "^1.0.9",
     "svelte-preprocess": "^4.6.1",
     "svelte-watch-resize": "^1.0.3"
   }
