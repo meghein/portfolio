@@ -2,7 +2,7 @@
   import { onMount, afterUpdate } from 'svelte';
   import { fade } from 'svelte/transition';
   import { watchResize } from "svelte-watch-resize";
-  import { y, windowHeight } from '../store.js';
+  import { y, windowHeight, windowWidth } from '../store.js';
   import Symbols from './Symbols.svelte';
   import Nav from './Nav.svelte';
   import Links from './Links.svelte'
@@ -29,6 +29,8 @@
 
   function handleResize(node) {
     $windowHeight = node.clientHeight;
+    $windowWidth = node.clientWidth;
+    console.log($windowWidth)
   };
 
 </script>
