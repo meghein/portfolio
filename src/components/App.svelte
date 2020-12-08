@@ -3,6 +3,7 @@
   import { fade } from 'svelte/transition';
   import { watchResize } from "svelte-watch-resize";
   import { y, windowHeight, windowWidth } from '../store.js';
+  import scroll from '../helpers/scroll'
   import Symbols from './Symbols.svelte';
   import Nav from './Nav.svelte';
   import Links from './Links.svelte'
@@ -20,12 +21,6 @@
       }, 5000)
     }, 10000)
   })
-
-  function scroll() {
-    document
-      .getElementById('about')
-      .scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 
   function handleResize(node) {
     $windowHeight = node.clientHeight;
@@ -47,7 +42,7 @@
     <div class='inner-home'>
       <h1>I'm Meg.</h1>
       <h2>a full stack web developer.</h2>
-      <button on:click|preventDefault={() => scroll()}>Learn more </button>
+      <button on:click|preventDefault={() => scroll('about')}>Learn more </button>
     </div>
     {#if showLinks}
     <div class='home-links' transition:fade>
