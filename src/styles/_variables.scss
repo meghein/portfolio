@@ -1,5 +1,35 @@
 $darkblue: #011F51;
 $cream: #FBEEC1;
 $orange: #DA862D;
-// $teal: 
+$teal: #167974;
+$rosewood: #6a040f;
+
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+@mixin sm {
+	@media (min-width: $sm-min) {
+		@content
+	}
+};
+
+@mixin md {
+	@media (min-width: $md-min) {
+		@content
+	}
+};
+
+@mixin lg {
+	@media (min-width: $lg-min) {
+		@content
+	}
+};
+
+@mixin xl {
+	@media (min-width: $xl-min) {
+		@content
+	}
+};
 
