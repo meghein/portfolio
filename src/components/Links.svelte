@@ -12,30 +12,36 @@
 </script>
 
 <style type="text/scss">
-	#link-header {
-		margin: 0;
-		padding-bottom: 2px;
-	}
-	.icons {
-		&:hover > a:not(:hover) {
-			opacity: 0.5;
-		}
-		.fab {
-			font-size: 2em;
-			padding: 2px;
-			&:hover{
-				animation: shake .5s 1 linear;
-			}
-			@keyframes shake{
-				0%{ transform:rotate(10deg) scale(1.1) }
-				20%{ transform:rotate(-10deg) scale(1.1) }
-				40%{ transform:rotate(10deg) scale(1.1) }
-				60%{ transform:rotate(-10deg) scale(1.1) }
-				80%{ transform:rotate(10deg) scale(1.1) }
-				100%{ transform:rotate(0) scale(1.1) }
-			}
-	}
-	}
+
+// a, a:visited {
+// 	color: #6a040f;
+// 	text-decoration: none;
+// }
+
+	// #link-header {
+	// 	margin: 0;
+	// 	padding-bottom: 2px;
+	// }
+	// .icons {
+	// 	&:hover > a:not(:hover) {
+	// 		opacity: 0.5;
+	// 	}
+	// 	.fab {
+	// 		font-size: 2em;
+	// 		padding: 2px;
+	// 		&:hover{
+	// 			animation: shake .5s 1 linear;
+	// 		}
+	// 		@keyframes shake{
+	// 			0%{ transform:rotate(10deg) scale(1.1) }
+	// 			20%{ transform:rotate(-10deg) scale(1.1) }
+	// 			40%{ transform:rotate(10deg) scale(1.1) }
+	// 			60%{ transform:rotate(-10deg) scale(1.1) }
+	// 			80%{ transform:rotate(10deg) scale(1.1) }
+	// 			100%{ transform:rotate(0) scale(1.1) }
+	// 		}
+	// }
+	// }
 </style>
 
 <div class='links' style='font-size: {size}'>

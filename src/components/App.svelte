@@ -30,7 +30,6 @@
   function handleResize(node) {
     $windowHeight = node.clientHeight;
     $windowWidth = node.clientWidth;
-    console.log($windowWidth)
   };
 
 </script>

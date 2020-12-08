@@ -1,45 +1,48 @@
+@import 'variables';
+
 #about {
 	position: relative;
-	min-height: 95vh;
 	padding-top: 60px;
-	background: linear-gradient(195deg,#da862d 39%, #FBEEC1 calc(39% + 2px));
+	background: linear-gradient(195deg, $orange 39%, $cream calc(39% + 2px));
+	height: 100vh;
 	.top {
 	height: 0px;
 	}
 	#profile {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		place-items: center;
-		padding: 2em;
+		max-width: 90%;
+		margin: auto;	
 		img {
-			max-width: 400px;
+			float: left;
+			shape-outside: url('/images/cutout.png');
+			shape-margin: 1%;
+			max-width: 180px;
+			margin-top: 13.5em;
+			margin-left: -1em;
 		}
 		#bio {
-			background-color: #011f51;
-			color: #FBECC1;
+			background-color: $darkblue;
+			color: $cream;
 			font-family: 'Quicksand', sans-serif;
-			font-size: 1.2em;
-			line-height: 1.4em;
 			font-weight: lighter;
+			font-size: .85em;
 			margin: auto;
-			padding: 1em;
+			padding: .75em;
+			border-radius: 2px;
 			a {
 				color: #30b8a1
 			}
 			button {
 				background-color: #FBEEC1;
-				border: 1px solid #FBECC1;
+				border: 1px solid $cream;
 				color: #011f51;
 				outline: none;
   			transition: 1s ease-in-out;
 				cursor: pointer;
-
 				&:hover {
 					background-color: #011f51;
-					color: #FBECC1;
+					color: $cream;
 					transition: 1s ease-in-out;
 				}
-				
 			}
 		}
 	}
@@ -57,6 +60,7 @@
 		background-color: rgba(0,0,0,0.4);
 		#resume {
 			position: relative;
+			background-color: $cream;
 			#close {
 				position: absolute;
     		top: -20px;
@@ -71,3 +75,44 @@
 		}
 	}
 }
+
+/*
+
+#profile {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		place-items: center;
+		padding: 2em;
+		img {
+			max-width: 200px;
+		}
+		#bio {
+			background-color: $darkblue;
+			color: $cream;
+			font-family: 'Quicksand', sans-serif;
+			font-size: 1.2em;
+			line-height: 1.4em;
+			font-weight: lighter;
+			margin: auto;
+			padding: 1em;
+			a {
+				color: #30b8a1
+			}
+			button {
+				background-color: #FBEEC1;
+				border: 1px solid $cream;
+				color: #011f51;
+				outline: none;
+  			transition: 1s ease-in-out;
+				cursor: pointer;
+
+				&:hover {
+					background-color: #011f51;
+					color: $cream;
+					transition: 1s ease-in-out;
+				}
+				
+			}
+		}
+
+*/

@@ -1,3 +1,5 @@
+@import 'variables';
+
 #projects {
 	min-height: 100vh;
 	background: linear-gradient(176deg, #FBEEC1 70%, #006f69 calc(70% + 2px));
@@ -12,20 +14,15 @@
 		place-content: center;
 		// color: #006F69;
 		ul {
-			display: grid;
-			grid-template:
-				[row1-start] "a1 a2" 1fr[row1-end]
-				[row2-start] "a3 a4" 1fr [row2-end]
-				/ 1fr 1fr;
-			gap: 10px;
 			list-style-type: none;
 			padding-inline-start: 0;
 			width: 100%;
 			margin-bottom: 90px;
 			li {
 				// border: 1px solid #011f51;
-				min-width: 400px;
-				min-height: 250px;
+				width: 200px;
+				height: 150px;
+				margin-bottom: 10px;
 				div {
 					display: grid;
 					grid-template-rows: 1fr 1fr 1fr;
@@ -40,11 +37,9 @@
 					}
 					button {
 						border: 1px solid #011f51;
-						// border: none;
 						background-color: #011f51;
 						color:#da862d;
 						justify-self: center;
-						// width: 50%;
 						height: 50%;
 						&:hover{ 
 						animation: pulse 2s infinite;

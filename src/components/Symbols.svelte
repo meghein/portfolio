@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 
+	let frame;
 	const symbols = ['>', '...', '&&', '||', '[]', '=', 'let', '@', '#'];
 
 	let syntax = new Array(20).fill()
@@ -14,30 +15,28 @@
 		})
 		.sort((a, b) => a.r - b.r);
 
-	onMount(() => {
-		let frame;
-
 		function loop() {
-			frame = requestAnimationFrame(loop);
+				frame = requestAnimationFrame(loop);
+				syntax = syntax.map(dot => {
+					dot.y += 0.7 * dot.r;
+					if (dot.y > 120) dot.y = -20;
+					return dot;
+				});
+			}
 
-			syntax = syntax.map(dot => {
-				dot.y += 0.7 * dot.r;
-				if (dot.y > 120) dot.y = -20;
-				return dot;
-			});
-		}
-
-		loop();
-
-		return () => cancelAnimationFrame(frame);
-	});
+		onMount(() => {
+			loop();
+			return () => cancelAnimationFrame(frame);
+		});
 </script>
 
-<style>
+<style type="text/scss">
+@import '../styles/variables';
+
 	span {
 		position: absolute;
 		font-size: 1.5em;
-		color: #DA862D;
+		color: $orange;
 		filter: blur(2px);
 		opacity: .5;
 		transform: translateY(-10vh);
