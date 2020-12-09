@@ -71,7 +71,7 @@
   <div id='scroll-contact' class='top'/>
   <div class='inner-contact'>
     {#if visible}
-      <h1 id='contact-head' in:fly="{{ x: -100, duration: 2000 }}" out:fade>
+      <h1 id='contact-head' in:fly="{{ y: -300, duration: 2000 }}" out:fade>
         <i>Drop me a line,</i> I'd love to hear from you:
       </h1>
     {/if}

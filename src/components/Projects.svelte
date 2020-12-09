@@ -4,12 +4,12 @@
   import { y, windowHeight } from '../store.js';
   import {clickOutside} from '../helpers/clickOutside.js';
 
-  let visible = false;
+  export let visible = false;
 
   afterUpdate(() => {
     const header = document.getElementById('scroll-projects');
     let topHead = header.getBoundingClientRect().top;
-    if ($y && topHead < $windowHeight) {
+    if ($y && topHead < $windowHeight && topHead > $windowHeight*-.75) {
       visible = true
     } else {
       visible = false
@@ -74,11 +74,12 @@
 
 <div id='projects'>
   <div id='scroll-projects' class='top'/>
-  <h1 id='projects-head' in:fly="{{ x: 100, duration: 2000 }}">
+  <div class='placeholder' style='{visible ? 'display:none' : 'height:75px'}'/>
+  {#if visible}
+  <h1 id='projects-head' in:fade="{{ duration: 1000 }}">
       PROJECTS
   </h1>
-  <!-- {#if visible}
-  {/if} -->
+  {/if}
   <div id='project-list'>
     <ul>
       {#each projects as {id, name, image, stack} }

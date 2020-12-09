@@ -1,9 +1,9 @@
 <script>
   import { afterUpdate } from "svelte";
-  import { fade, fly, scale, blur } from 'svelte/transition';
+  import { fade, fly } from 'svelte/transition';
   import { y, windowHeight } from '../store.js';
   import {clickOutside} from '../helpers/clickOutside.js';
-  import { elasticOut, expoInOut } from 'svelte/easing';
+  import { cubicOut, elasticOut } from 'svelte/easing';
 
   let visible = false;
   let resume;
@@ -32,10 +32,10 @@
   </h1>
   
   <div id='profile'>
-    <img src="images/cutout.png" alt="my face" in:blur="{{duration: 1500, delay: 500}}" out:fly="{{x: -200, duration: 500}}"> 
+    <img src="images/cutout.png" alt="my face" in:fly="{{x:-100, duration: 1000, delay: 1200, easing: elasticOut}}" out:fly="{{x: -100, duration: 500}}"> 
     <div
       id='bio'
-      in:fly="{{x:100, duration: 1000, delay: 800}}"
+      in:fly="{{x:100, duration: 1000, easing: cubicOut}}"
       out:fade
     >
       <p>Hi there! Thanks for visiting my portfolio! <br/><br/>
