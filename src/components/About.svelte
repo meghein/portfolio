@@ -11,8 +11,7 @@
   afterUpdate(() => {
     const header = document.getElementById('scroll-about');
     let topHead = header.getBoundingClientRect().top;
-    $y
-    if (topHead < $windowHeight && topHead > $windowHeight*-.75) {
+    if ($y && topHead < $windowHeight && topHead > $windowHeight*-.75) {
       visible = true
     } else {
       visible = false
@@ -28,7 +27,7 @@
 <div id='about'>
   <div id='scroll-about' class='top'/>
   {#if visible}
-  <h1 id='about-head' in:fly="{{ x: -500, duration: 3000 }}" out:fade>
+  <h1 id='about-head' in:fly="{{ x: -50, duration: 3000 }}" out:fade>
     ABOUT
   </h1>
   
@@ -36,7 +35,7 @@
     <img src="images/cutout.png" alt="my face" in:blur="{{duration: 1500, delay: 500}}" out:fly="{{x: -200, duration: 500}}"> 
     <div
       id='bio'
-      in:fly="{{x:200, duration: 1000, delay: 800}}"
+      in:fly="{{x:100, duration: 1000, delay: 800}}"
       out:fade
     >
       <p>Hi there! Thanks for visiting my portfolio! <br/><br/>
