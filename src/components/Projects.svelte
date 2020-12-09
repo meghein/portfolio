@@ -9,8 +9,7 @@
   afterUpdate(() => {
     const header = document.getElementById('scroll-projects');
     let topHead = header.getBoundingClientRect().top;
-    $y
-    if (topHead < $windowHeight && topHead > $windowHeight*-.75) {
+    if ($y && topHead < $windowHeight) {
       visible = true
     } else {
       visible = false
@@ -76,7 +75,7 @@
 <div id='projects'>
   <div id='scroll-projects' class='top'/>
   {#if visible}
-    <h1 id='projects-head' in:fly="{{ x: 1000, duration: 2000 }}" out:fade>
+    <h1 id='projects-head' in:fly="{{ x: 1000, duration: 2000 }}">
       PROJECTS
     </h1>
   {/if}

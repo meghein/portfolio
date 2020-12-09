@@ -11,8 +11,7 @@
   afterUpdate(() => {
     const header = document.getElementById('scroll-contact');
     let topHead = header.getBoundingClientRect().top;
-    // console.log($y, $windowHeight)
-    if (topHead < $windowHeight && topHead > $windowHeight*-.75) {
+    if ($y && topHead < $windowHeight && topHead > $windowHeight*-.75) {
       visible = true
     } else {
       visible = false
