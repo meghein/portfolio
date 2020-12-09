@@ -1,9 +1,11 @@
 <script>
-  import { onMount, afterUpdate } from 'svelte';
+  import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { watchResize } from "svelte-watch-resize";
+
   import { y, windowHeight, windowWidth } from '../store.js';
-  import scroll from '../helpers/scroll'
+  import scroll from '../helpers/scroll';
+
   import Symbols from './Symbols.svelte';
   import Nav from './Nav.svelte';
   import Links from './Links.svelte'
@@ -18,8 +20,8 @@
     setInterval(() => {
       setTimeout(() => {
         showLinks = !showLinks
-      }, 5000)
-    }, 10000)
+      }, 2000)
+    }, 3000)
   })
 
   function handleResize(node) {
@@ -29,26 +31,26 @@
 
 </script>
 
-<style type="text/scss">
-	@import '../styles/App.scss';
-</style>
-
 <svelte:window bind:scrollY={$y}/>
 
 <main>
   <div id='home' use:watchResize={handleResize}>
     <div class='top'/>
-    <Symbols/>
-    <div class='inner-home'>
+    <!-- <Symbols/> -->
+    <div class='home-content'>
       <h1>I'm Meg.</h1>
-      <h2>a full stack web developer.</h2>
+      <div>
+        <h2>a full stack web developer.</h2>
+      </div>
       <button on:click|preventDefault={() => scroll('about')}>Learn more </button>
+      <div class='home-links'>
+        {#if showLinks}
+        <div transition:fade>
+          <Links msg='Rather just connect?' color='#006F69'/>
+        </div>
+        {/if}
+      </div>
     </div>
-    {#if showLinks}
-    <div class='home-links' transition:fade>
-      <Links msg='Rather just connect?' size='1em' color='#006F69'/>
-    </div>
-    {/if}
   </div>
   <Nav/>
   <About/>
@@ -56,3 +58,7 @@
   <Contact/>
   <Footer/>
 </main>
+
+<style type="text/scss">
+	@import '../styles/App.scss';
+</style>

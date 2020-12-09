@@ -4,32 +4,24 @@ $orange: #DA862D;
 $teal: #167974;
 $rosewood: #6a040f;
 
-$sm-min: 576px;
-$md-min: 768px;
-$lg-min: 992px;
-$xl-min: 1200px;
-
-@mixin sm {
-	@media (min-width: $sm-min) {
-		@content
+@mixin breakpoint($class) {
+	@if $class == sm-width {
+		@media (min-width: 576px) { @content; }
 	}
-};
-
-@mixin md {
-	@media (min-width: $md-min) {
-		@content
+	@else if $class == md-width {
+		@media (min-width: 768px) { @content; }
 	}
-};
-
-@mixin lg {
-	@media (min-width: $lg-min) {
-		@content
+	@else if $class == lg-width {
+		@media (min-width: 992px) { @content; }
 	}
-};
-
-@mixin xl {
-	@media (min-width: $xl-min) {
-		@content
+	@else if $class == xl-width {
+		@media (min-width: 1200px) { @content; }
 	}
-};
+	@else if $class == sm-height {
+		@media (max-height: 576px) { @content; }
+	}
+	@else {
+		@warn 'Breakpoint mixin supports: sm-width, md-width, lg-width, xl-width, sm-height'
+	}
+}
 
