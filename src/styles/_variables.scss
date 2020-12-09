@@ -5,7 +5,10 @@ $teal: #167974;
 $rosewood: #6a040f;
 
 @mixin breakpoint($class) {
-	@if $class == sm-width {
+	@if $class == xs-width {
+		@media (max-width: 359px) { @content; }
+	}
+	@else if $class == sm-width {
 		@media (min-width: 576px) { @content; }
 	}
 	@else if $class == md-width {

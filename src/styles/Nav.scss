@@ -1,6 +1,8 @@
+@import 'variables';
+
 #main-nav {
 	font-family: 'Quicksand', sans-serif;
-	font-size: .75em;
+	font-size: .6em;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -19,48 +21,20 @@
 		&:hover > li:not(:hover) {
 			opacity: 0.5;
 		}
+		&.fixed {
+			position: fixed;
+			top: 0;
+			left:0;
+			width: 100%;
+			padding-top: 1em;
+			padding-bottom: .5em;
+			margin: 0;
+		}
+	}
+	@include breakpoint(xs-width) {
+		font-size: .5em;
+	}
+	@include breakpoint(md-width) {
+		font-size: 1em;
 	}
 }
-.fixed {
-	position: fixed;
-	top: 0;
-	left:0;
-	width: 100%;
-	padding-top: 1em;
-	padding-bottom: .5em;
-	margin: 0;
-}
-
-// #hamburger {
-// 	font-size: 1.5em;
-// 	&.fixed {
-// 		text-align: end;
-// 		padding-top: .5em;
-// 	}
-// 	.fas {
-// 		margin-right: .5em;
-// 	}
-// }
-
-// #responsive-items {
-// 	position: fixed;
-// 	top: 0;
-// 	right: 0;
-// 	margin-right: .5em;
-// 	background-color:  #011f51;
-// 	color: #FBEEC1;
-// 	padding-inline-start: 0;
-// 	list-style-type: none;
-
-// }
-
-
-// // RESPONSIVE DESIGN: //
-// #main-nav {
-// 	@media (max-width: 768px) {
-// 		font-size: .7em;
-// 	}
-// 	@media (max-width: 360px) {
-// 		font-size: .5em;
-// 	}
-// }
