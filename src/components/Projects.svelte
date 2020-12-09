@@ -74,11 +74,11 @@
 
 <div id='projects'>
   <div id='scroll-projects' class='top'/>
-  {#if visible}
-    <h1 id='projects-head' in:fly="{{ x: 100, duration: 2000 }}">
+  <h1 id='projects-head' in:fly="{{ x: 100, duration: 2000 }}">
       PROJECTS
-    </h1>
-  {/if}
+  </h1>
+  <!-- {#if visible}
+  {/if} -->
   <div id='project-list'>
     <ul>
       {#each projects as {id, name, image, stack} }
