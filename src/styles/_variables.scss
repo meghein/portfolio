@@ -1,8 +1,8 @@
 $darkblue: #011F51;
 $cream: #FBEEC1;
 $orange: #DA862D;
-$teal: #167974;
-$rosewood: #6a040f;
+$teal: #006F69;
+$rosewood: #6A040F;
 
 @mixin breakpoint($class) {
 	@if $class == xs-width {

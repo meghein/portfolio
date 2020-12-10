@@ -1,33 +1,32 @@
 @import 'variables';
 
 #projects {
-	min-height: 100vh;
-	background: linear-gradient(176deg, #FBEEC1 70%, #006f69 calc(70% + 2px));
+	// min-height: 100vh;
+	background: linear-gradient(176deg, $cream 70%, $teal calc(70% + 2px));
 	.top {
-	padding-top: 20px;
-	height: 0;
+	height: 20px;
 	}
 	#project-list {
-		width: 100%;
-		height: 100%;
-		display: grid;
-		place-content: center;
-		// color: #006F69;
 		ul {
+			display:grid;
+			place-items: center;
+			// grid-template: 1fr 1fr/ 1fr 1fr;
+			gap: 5px;
 			list-style-type: none;
 			padding-inline-start: 0;
 			width: 100%;
-			margin-bottom: 90px;
+			margin: 0;
+			padding-bottom: 4em;
 			li {
-				// border: 1px solid #011f51;
-				width: 200px;
-				height: 150px;
-				margin-bottom: 10px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				width: 280px;
+				height: 173.25px;
 				div {
 					display: grid;
 					grid-template-rows: 1fr 1fr 1fr;
 					text-align: center;
-					background-color: #da862d;
+					background-color: $orange;
 					padding: 0;
 					width: 100%;
 					height: 100%;
@@ -36,9 +35,9 @@
 						margin: 0;
 					}
 					button {
-						border: 1px solid #011f51;
-						background-color: #011f51;
-						color:#da862d;
+						border: 1px solid $darkblue;
+						background-color: $darkblue;
+						color: $orange;
 						justify-self: center;
 						height: 50%;
 						&:hover{ 
@@ -55,6 +54,7 @@
 			}
 		}
 	}
+
 	#modal {
 		display: grid;
 		place-items: center;
@@ -70,11 +70,9 @@
 		#frame {
 			padding: 1em;
 			margin: .5em;
-			// border: 5px solid #006f69;
 			max-width: 600px;
 			max-height: 600px;
-			background-color: #FBEEC1;
-			// display: grid;
+			background-color: $cream;
 			img {
 				max-width: 100%;
 			}
@@ -87,21 +85,20 @@
 				align-items: center;
 				margin-top: 1em;
 				.external {
-					border: 2.5px solid #6a040f;
-					// border-radius: 5px;
-					background-color: #6a040f;
-					color: #FBEEC1;
+					border: 2.5px solid $rosewood;
+					background-color: $rosewood;
+					color: $cream;
 					padding: .5em;
 					font-size: .8em;
 					font-weight: bold;
 					&:hover {
-						background-color: #FBEEC1;
-						color: #6a040f;
+						background-color: $cream;
+						color: $rosewood;
 					}
 				}
 				#close {
 					border: none;
-					color: #6a040f;
+					color: $rosewood;
 					font-size: 1.8em;
 					cursor: pointer;
 				}

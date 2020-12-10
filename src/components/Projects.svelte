@@ -42,10 +42,9 @@
       github: 'https://github.com/meghein/sure-sheets'
     },
     tweeter: {
-      gif: 'images/tweeter.png',
+      gif: 'images/tweeter.gif',
       title: 'Intergalatic Tweeter',
       description: 'Tweeter is a simple, yet responsive and user-friendly, single-page Twitter clone. Built using HTML, CSS, JS, jQuery and AJAX for the front-end, and Node, Express and MongoDB for the back-end.',
-      // site: 'https://cayleythomas.com/',
       github: 'https://github.com/meghein/tweeter'
     },
     cayley: {
