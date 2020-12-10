@@ -23,12 +23,15 @@
     const menu = document.getElementById('nav-container');
     const topMenu = menu.getBoundingClientRect().top;
     const fixedMenu = document.getElementById('nav-items')
-    if (topMenu <= $windowHeight && topMenu > -$windowHeight) {
+    console.log(topMenu, $windowHeight)
+    if (topMenu <= 0 && topMenu > -$windowHeight*.6) {
       fixedMenu.setAttribute('style', 'background-color: #DA862D;')
-    } else if (topMenu <= -$windowHeight && topMenu > -$windowHeight*1.8) {
+    } else if (topMenu <= -$windowHeight*.6 && topMenu > -$windowHeight*1.8) {
       fixedMenu.setAttribute('style', 'background-color: #FBEEC1;')
     } else if (topMenu <= -$windowHeight*1.8) {
       fixedMenu.setAttribute('style', 'background-color: #006F69;')
+    } else {
+      fixedMenu.setAttribute('style', 'background: none')
     }
   }
 

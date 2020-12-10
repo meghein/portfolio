@@ -3,7 +3,7 @@
 #about {
 	position: relative;
 	padding-top: 2em;
-	background: linear-gradient(195deg, $orange 39%, $cream calc(39% + 2px));
+	background: linear-gradient(203.8deg, $orange 39%, $cream calc(39% + 2px));
 	height: 100vh;
 	.top {
 	height: 0px;
@@ -74,45 +74,8 @@
 			}
 		}
 	}
+
+	@include breakpoint(sm-height) {
+		background: linear-gradient(195deg, $orange 39%, $cream calc(39% + 2px));
+	}
 }
-
-/*
-
-#profile {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		place-items: center;
-		padding: 2em;
-		img {
-			max-width: 200px;
-		}
-		#bio {
-			background-color: $darkblue;
-			color: $cream;
-			font-family: 'Quicksand', sans-serif;
-			font-size: 1.2em;
-			line-height: 1.4em;
-			font-weight: lighter;
-			margin: auto;
-			padding: 1em;
-			a {
-				color: #30b8a1
-			}
-			button {
-				background-color: #FBEEC1;
-				border: 1px solid $cream;
-				color: #011f51;
-				outline: none;
-  			transition: 1s ease-in-out;
-				cursor: pointer;
-
-				&:hover {
-					background-color: #011f51;
-					color: $cream;
-					transition: 1s ease-in-out;
-				}
-				
-			}
-		}
-
-*/

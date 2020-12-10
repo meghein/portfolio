@@ -55,4 +55,7 @@
 			height: 3em;
 		}
 	}
+	@include breakpoint(sm-height) {
+		background: linear-gradient(172deg, $cream 70%, $orange calc(70% + 2px));
+	}
 }
