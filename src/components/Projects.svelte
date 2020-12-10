@@ -4,18 +4,7 @@
   import { y, windowHeight } from '../store.js';
   import {clickOutside} from '../helpers/clickOutside.js';
 
-  export let visible = false;
-
-  afterUpdate(() => {
-    const header = document.getElementById('scroll-projects');
-    let topHead = header.getBoundingClientRect().top;
-    if ($y && topHead < $windowHeight && topHead > $windowHeight*-.75) {
-      visible = true
-    } else {
-      visible = false
-    }
-  })
-  
+  let visible = false;
   let modal = false;
   let show = {};
   let id;
@@ -54,7 +43,7 @@
       site: 'https://cayleythomas.com/',
       github: 'https://github.com/meghein/cayley-thomas'
     },
-    }
+  }
 
 	function toggleModal(e) {
     id = e.target.value
@@ -64,6 +53,16 @@
   function toggleShow(e) {
     show[e.target.id] = !show[e.target.id]
   }
+
+  afterUpdate(() => {
+    const header = document.getElementById('scroll-projects');
+    let topHead = header.getBoundingClientRect().top;
+    if ($y && topHead < $windowHeight && topHead > $windowHeight*-.75) {
+      visible = true
+    } else {
+      visible = false
+    }
+  })
 
 </script>
 
@@ -86,10 +85,8 @@
           id={id}
           on:mouseenter={toggleShow}
           on:mouseleave={toggleShow}
-          style="
-          background-image: url('{image}');
-          background-size: 100% 100%;
-        ">
+          style="background-image: url('{image}');"
+        >
         {#if show[id]}
         <div transition:fade>
           <h2 transition:fly="{{ x: -100, duration: 1500 }}">{name}</h2>

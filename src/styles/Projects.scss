@@ -1,20 +1,20 @@
 @import 'variables';
 
 #projects {
-	// min-height: 100vh;
+	min-height: 100vh;
 	background: linear-gradient(176deg, $cream 70%, $teal calc(70% + 2px));
 	.top {
 	height: 20px;
 	}
 	#project-list {
+		display: flex;
+		justify-content: center;
 		ul {
-			display:grid;
+			display: grid;
 			place-items: center;
-			// grid-template: 1fr 1fr/ 1fr 1fr;
 			gap: 5px;
 			list-style-type: none;
 			padding-inline-start: 0;
-			width: 100%;
 			margin: 0;
 			padding-bottom: 4em;
 			li {
@@ -50,6 +50,42 @@
 						100% { transform: scale(1); }
 						}
 					}
+				}
+			}
+			@include breakpoint(sm-height) {
+				grid-template: 1fr 1fr / 360px 360px;
+				li {
+					width: 360px;
+					height: 222.75px;
+				}
+				@media (max-width: 720px) {
+					grid-template: 1fr 1fr / 240px 240px;
+				li {
+					width: 240px;
+					height: 148.5px;
+				}
+				}
+			}
+			
+			@include breakpoint(xs-width) {
+				li {
+					width: 240px;
+					height: 148.5px;
+				}
+			}
+			@include breakpoint(md-width) {
+				grid-template: 1fr 1fr / 360px 360px;
+				li {
+					width: 360px;
+					height: 222.75px;
+				}
+			}
+			@include breakpoint(lg-width) {
+				grid-template: 1fr 1fr / 500px 500px;
+				gap: 10px;
+				li {
+					width: 500px;
+					height: 309.375px
 				}
 			}
 		}
