@@ -42,7 +42,7 @@
       <div>
         <h2>a full stack web developer.</h2>
       </div>
-      <button on:click|preventDefault={() => scroll('about')}>Learn more </button>
+      <button on:click|preventDefault={() => scroll('about')}>Learn More </button>
       <div class='home-links'>
         {#if showLinks}
         <div transition:fade>
