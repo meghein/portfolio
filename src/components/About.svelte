@@ -21,6 +21,10 @@
   function toggleModal() {
     resume = !resume
   }
+
+  function openPdf() {
+    window.location.href = 'resume.pdf'
+  }
   
 </script>
 
@@ -49,8 +53,8 @@
         
         Want to know more? <a href='https://www.coursereport.com/blog/how-meghan-became-a-digital-nomad-with-lighthouse-labs' target='_blank' rel='noreferrer'>Click here to read an interview </a>I did with Course Report.
       </p>
-      {#if $windowWidth < 768}
-      <button type="submit" onclick="window.open('resume.pdf')">
+      {#if $windowWidth < 769}
+      <button type="submit" on:click={openPdf}>
         View Resume <i class="fas fa-external-link-alt"/>
       </button>
       {:else}
