@@ -1,7 +1,7 @@
 <script>
   import { afterUpdate } from "svelte";
   import { fade, fly } from 'svelte/transition';
-  import { y, windowHeight } from '../store.js';
+  import { y, windowHeight, windowWidth } from '../store.js';
   import {clickOutside} from '../helpers/clickOutside.js';
   import { cubicOut, elasticOut } from 'svelte/easing';
 
@@ -34,9 +34,9 @@
   <div id='profile'>
     <img src="images/cutout.png" alt="my face" in:fly="{{x:-100, duration: 1000, delay: 1200, easing: elasticOut}}" out:fly="{{x: -100, duration: 500}}"> 
     <div
-      id='bio'
-      in:fly="{{x:100, duration: 1000, easing: cubicOut}}"
-      out:fade
+    id='bio'
+    in:fly="{{x:100, duration: 1000, easing: cubicOut}}"
+    out:fade
     >
       <p>Hi there! Thanks for visiting my portfolio! <br/><br/>
         
@@ -46,11 +46,13 @@
         
         Want to know more? <a href='https://www.coursereport.com/blog/how-meghan-became-a-digital-nomad-with-lighthouse-labs' target='_blank' rel='noreferrer'>Click here to read an interview </a>I did with Course Report.
       </p>
-  
-      <!-- <a href='images/resume.pdf' download='Meghan_Hein_2020'>Download resume</a> -->
-
-      <!-- MOVE ALL THIS TO RESPONSIVE DESKTOP DESIGN -->
-      <button on:click={toggleModal}>View resume</button>
+      {#if $windowWidth < 768}
+      <button type="submit" onclick="window.open('images/resume.pdf')">
+        View Resume <i class="fas fa-external-link-alt"/>
+      </button>
+      {:else}
+      <button on:click={toggleModal}>View Resume</button>
+      {/if}
     </div>
   </div>
   {#if resume}

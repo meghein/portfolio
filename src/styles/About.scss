@@ -10,24 +10,28 @@
 	}
 	#profile {
 		max-width: 90%;
-		margin: auto;	
+		margin: auto;
+		background-color: $darkblue;
+		padding: .75em;
+		border-radius: 2px;
+		font-family: 'Quicksand', sans-serif;	
 		img {
 			float: left;
 			shape-outside: url('/images/cutout.png');
-			shape-margin: 1%;
-			max-width: 180px;
-			margin-top: 13.5em;
-			margin-left: -1em;
+			shape-margin: 2%;
+			max-width: 50%;
+			margin: 13em -1em 0 0;
+			@media (min-width: 400px) {
+				margin: 10em -1em 0 0
+			}
+			@media (min-width: 540px) {
+				margin: 8em -1em 0 0;
+			}
 		}
 		#bio {
-			background-color: $darkblue;
-			color: $cream;
-			font-family: 'Quicksand', sans-serif;
+			color: $cream;	
 			font-weight: lighter;
-			font-size: .85em;
-			margin: auto;
-			padding: .75em;
-			border-radius: 2px;
+			font-size: .85em;	
 			a {
 				color: #30b8a1
 			}
@@ -75,7 +79,54 @@
 		}
 	}
 
+	@include breakpoint(xs-width) {
+		#profile {
+			img {
+				float: none;
+				margin: 0;
+			}
+		}
+	}
+
+	@include breakpoint(sm-width) {
+		#about-head {
+			padding: 2em;
+		}
+		#profile {
+			width: 60%;
+			img {
+				margin: 11em -1em 0 0;
+			}
+			#bio {
+				font-size: 1em;
+			}
+		}
+	}
+	
+	@include breakpoint(lg-width) {
+		#profile {
+			width: 60%;
+			img {
+				max-width: 40%;
+				margin: -1em -2em 0 0;
+			}
+			#bio {
+				font-size: 1em;
+			}
+		}
+	}
+
 	@include breakpoint(sm-height) {
 		background: linear-gradient(195deg, $orange 39%, $cream calc(39% + 2px));
+		#about-head {
+			padding: 0;
+		}
+		#profile {
+			width: 100%;
+			img {
+				max-width: 30%;
+				margin:  4em -1em 0 0;
+			}
+		}
 	}
 }
