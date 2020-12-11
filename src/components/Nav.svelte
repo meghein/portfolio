@@ -23,7 +23,6 @@
     const menu = document.getElementById('nav-container');
     const topMenu = menu.getBoundingClientRect().top;
     const fixedMenu = document.getElementById('nav-items')
-    console.log(topMenu, $windowHeight)
     if (topMenu <= 0 && topMenu > -$windowHeight*.6) {
       fixedMenu.setAttribute('style', 'background-color: #DA862D;')
     } else if (topMenu <= -$windowHeight*.6 && topMenu > -$windowHeight*1.6) {

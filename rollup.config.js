@@ -35,7 +35,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: 'public/build01/bundle.js'
 	},
 	plugins: [
 		svelte({
@@ -73,6 +73,9 @@ export default {
 		production && terser()
 	],
 	watch: {
-		clearScreen: false
+		clearScreen: false,
+		chokidar: {
+			usePolling: true
+		}
 	}
 };

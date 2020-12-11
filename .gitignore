@@ -1,5 +1,5 @@
 /node_modules/
-/public/build/
+/public/build01/
 /src/helpers/apikeys.js
 
 .DS_Store
