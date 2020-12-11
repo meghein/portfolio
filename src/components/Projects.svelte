@@ -118,7 +118,6 @@
             </a>
           </div>
           <i class="far fa-window-close"id='close' on:click={toggleModal}></i>
-          <!-- <i class="fas fa-times-circle" id='close' on:click={toggleModal}></i> -->
         </div>
       </div>
     </div>
