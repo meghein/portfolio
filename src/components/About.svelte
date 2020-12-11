@@ -47,7 +47,7 @@
         Want to know more? <a href='https://www.coursereport.com/blog/how-meghan-became-a-digital-nomad-with-lighthouse-labs' target='_blank' rel='noreferrer'>Click here to read an interview </a>I did with Course Report.
       </p>
       {#if $windowWidth < 768}
-      <button type="submit" onclick="window.open('images/resume.pdf')">
+      <button type="submit" onclick="window.open('resume.pdf')">
         View Resume <i class="fas fa-external-link-alt"/>
       </button>
       {:else}
@@ -59,7 +59,7 @@
   <div class='modal' out:fly="{{ y: -500, duration: 1000 }}">
     <div id='resume' in:fly="{{ y: 500, duration: 1000 }}" use:clickOutside on:click_outside={toggleModal}>
       <i id='close' on:click={toggleModal} class="far fa-times-circle"></i>
-      <iframe title='Meghan Hein 2020' src="images/resume.pdf" width={window.innerWidth - 60} height={window.innerHeight - 60} frameborder='0'>
+      <iframe title='Meghan Hein 2020' src="resume.pdf" width={window.innerWidth - 60} height={window.innerHeight - 60} frameborder='0'>
       </iframe>
     </div>
   </div>
