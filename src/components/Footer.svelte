@@ -14,7 +14,7 @@
     padding: 0 1.5em 0 1.5em;
     border-top: 2px solid #6a040f;
     p {
-      font-size: .7em;
+      font-size: .8em;
     }
   }
 </style>

@@ -20,7 +20,7 @@ a, a:visited {
 	#link-header {
 		margin: 0;
 		padding-bottom: 2px;
-		font-size: .9em;
+		font-size: 1.1em;
 	}
 	.icons {
 		&:hover > a:not(:hover) {

@@ -29,9 +29,9 @@
 			// @media (min-width: 400px) {
 			// 	margin: 10em -1em 0 0
 			// }
-			// @media (min-width: 540px) {
-			// 	margin: 8em -1em 0 0;
-			// }
+			@media (min-width: 540px) {
+				margin-top: 10em;
+			}
 		}
 		#bio {
 			background-color: $darkblue;
@@ -99,30 +99,38 @@
 		}
 	}
 
-	// @include breakpoint(sm-width) {
-	// 	#profile {
-	// 		width: 60%;
-	// 		img {
-	// 			margin: 11em -1em 0 0;
-	// 		}
-	// 		#bio {
-	// 			font-size: 1em;
-	// 		}
-	// 	}
-	// }
+	@include breakpoint(sm-width) {
+		h1 {
+			font-size: 3em;
+			margin-bottom: 2em;
+		}
+		#profile {
+			width: 80%;
+			#bio {
+				font-size: 1.3em;
+			}
+			img {
+				margin-top: 12em;
+			}
+		}
+	}
 	
-	// @include breakpoint(lg-width) {
-	// 	#profile {
-	// 		width: 60%;
-	// 		img {
-	// 			max-width: 40%;
-	// 			margin: -1em -2em 0 0;
-	// 		}
-	// 		#bio {
-	// 			font-size: 1em;
-	// 		}
-	// 	}
-	// }
+	@include breakpoint(lg-width) {
+		max-height: 85vh;
+		background: linear-gradient(197deg, $orange 39%, $cream calc(39% + 2px));
+		#profile {
+			h1 {
+				margin-bottom: 1em;
+			}
+			img {
+				max-width: 40%;
+				margin: -1em -2em 0 0;
+			}
+			// #bio {
+			// 	font-size: 1em;
+			// }
+		}
+	}
 
 	@include breakpoint(sm-height) {
 		background: linear-gradient(195deg, $orange 39%, $cream calc(39% + 2px));

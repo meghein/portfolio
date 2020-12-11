@@ -4,7 +4,10 @@
 	min-height: 100vh;
 	background: linear-gradient(176deg, $cream 70%, $teal calc(70% + 2px));
 	.top {
-	height: 20px;
+	height: 2em;
+	}
+	h1 {
+		padding-top: 1em;
 	}
 	#project-list {
 		display: flex;
