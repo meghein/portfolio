@@ -27,8 +27,11 @@
 <div id='about'>
   <div id='scroll-about' class='top'/>
   {#if visible}
-  <h1 id='about-head' in:fly="{{ x: -50, duration: 3000 }}" out:fade>
+  <!-- <h1 id='about-head' in:fly="{{ x: -50, duration: 3000 }}" out:fade>
     ABOUT
+  </h1> -->
+  <h1 id='about-head' in:fly="{{ x: -50, duration: 3000 }}" out:fade>
+    HELLO!
   </h1>
   
   <div id='profile'>
@@ -38,7 +41,7 @@
     in:fly="{{x:100, duration: 1000, easing: cubicOut}}"
     out:fade
     >
-      <p>Hi there! Thanks for visiting my portfolio! <br/><br/>
+      <p>
         
         I'm a web developer with a diverse background ranging from direct action activism in the high seas to forging silver in the Bajio mountains of central Mexico. I recently graduated from <a href='https://www.lighthouselabs.ca/' target='_blank' rel='noreferrer'>Lighthouse Labs'</a> immersive web development boot camp, which reinforced my infatuation with the programmatic potential in shaping the future.<br/><br/>
         

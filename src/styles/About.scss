@@ -1,37 +1,45 @@
 @import 'variables';
 
 #about {
+	display: grid;
+	place-content: center;
 	position: relative;
 	padding-top: 2em;
 	background: linear-gradient(203.8deg, $orange 39%, $cream calc(39% + 2px));
-	height: 100vh;
+	height: 90vh;
 	.top {
 	height: 0px;
+	}
+	h1 {
+		font-size: 2em;
+		margin-bottom: .5em;
 	}
 	#profile {
 		max-width: 90%;
 		margin: auto;
-		background-color: $darkblue;
-		padding: .75em;
-		border-radius: 2px;
 		font-family: 'Quicksand', sans-serif;	
 		img {
+			justify-self: center;
 			float: left;
 			shape-outside: url('/images/cutout.png');
 			shape-margin: 2%;
 			max-width: 50%;
-			margin: 13em -1em 0 0;
-			@media (min-width: 400px) {
-				margin: 10em -1em 0 0
-			}
-			@media (min-width: 540px) {
-				margin: 8em -1em 0 0;
-			}
+			max-height: 400px;
+			margin-top: 21em;
+			// @media (min-width: 400px) {
+			// 	margin: 10em -1em 0 0
+			// }
+			// @media (min-width: 540px) {
+			// 	margin: 8em -1em 0 0;
+			// }
 		}
 		#bio {
+			background-color: $darkblue;
+			padding: .75em;
+			border-radius: 2px;
 			color: $cream;	
 			font-weight: lighter;
-			font-size: .85em;	
+			font-size: 1em;	
 			a {
 				color: #30b8a1
 			}
@@ -80,41 +88,41 @@
 	}
 
 	@include breakpoint(xs-width) {
+		h1 {
+			font-size: 2em;
+			margin-bottom: 1em;
+		}
 		#profile {
-			img {
-				float: none;
-				margin: 0;
+			#bio {
+				font-size: .85em;
 			}
 		}
 	}
 
-	@include breakpoint(sm-width) {
-		#about-head {
-			padding: 2em;
-		}
-		#profile {
-			width: 60%;
-			img {
-				margin: 11em -1em 0 0;
-			}
-			#bio {
-				font-size: 1em;
-			}
-		}
-	}
+	// @include breakpoint(sm-width) {
+	// 	#profile {
+	// 		width: 60%;
+	// 		img {
+	// 			margin: 11em -1em 0 0;
+	// 		}
+	// 		#bio {
+	// 			font-size: 1em;
+	// 		}
+	// 	}
+	// }
 	
-	@include breakpoint(lg-width) {
-		#profile {
-			width: 60%;
-			img {
-				max-width: 40%;
-				margin: -1em -2em 0 0;
-			}
-			#bio {
-				font-size: 1em;
-			}
-		}
-	}
+	// @include breakpoint(lg-width) {
+	// 	#profile {
+	// 		width: 60%;
+	// 		img {
+	// 			max-width: 40%;
+	// 			margin: -1em -2em 0 0;
+	// 		}
+	// 		#bio {
+	// 			font-size: 1em;
+	// 		}
+	// 	}
+	// }
 
 	@include breakpoint(sm-height) {
 		background: linear-gradient(195deg, $orange 39%, $cream calc(39% + 2px));
