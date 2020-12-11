@@ -1,15 +1,19 @@
+@import '../styles/variables';
+
 #contact {
 	min-height: 85vh;
-	background: linear-gradient(176deg, #006f69 70%, #FBEEC1 calc(70% + 2px));
+	background: linear-gradient(176deg, $teal 70%, $cream calc(70% + 2px));
 	overflow-x: hidden;
 	.top {
 		height: 0;
 	}
 	h1 {
 		margin-top: 0;
-		color:#6a040f;
+		color: $rosewood;
+		font-size: 1.1em;
 		i {
-			color:#FBEEC1;
+			color: $cream;
+			font-size: 1.3em;
 		}
 	}
 	form {
@@ -18,10 +22,10 @@
 		width: 60%;
 		input, textarea {
 			border: none;
-			color: #6a040f;
-			background-color: #FBEEC1;
+			color:  $rosewood;
+			background-color: $cream;
 			&::placeholder {
-				color: #011f51;
+				color: $darkblue;
 			}
 			&:focus, &:active, &:hover {
 				outline: none;
@@ -30,34 +34,73 @@
 			&:-webkit-autofill:hover,
 			&:-webkit-autofill:focus,
 			&:-webkit-autofill:active  {
-				box-shadow: 0 0 0 30px  #FBEEC1 inset;
-				-webkit-box-shadow: 0 0 0 30px  #FBEEC1 inset !important;
-				-webkit-text-fill-color: #6a040f !important;
+				box-shadow: 0 0 0 30px  $cream inset;
+				-webkit-box-shadow: 0 0 0 30px  $cream inset !important;
+				-webkit-text-fill-color:  $rosewood !important;
 			}
 		}
 		textarea {
-			min-height: 8em;
+			min-height: 6em;
 		}
 		button {
 			margin: auto;
 			font-size: 1.2em;
-			color: #FBEEC1;
-			border: 1px solid #FBEEC1;
-			box-shadow: inset 0 0 0 0 #167974;
+			color: $cream;
+			border: 1px solid $cream;
+			box-shadow: inset 0 0 0 0 $teal;
 			transition: .5s ease-out;
 			&:hover {
-				box-shadow: inset 0 100px 0 0 #FBEEC1;
-				color: #167974;
+				box-shadow: inset 0 100px 0 0 $cream;
+				color: $teal;
 			}
 		}
 	}
 	#confirm-msg {
 		font-family: 'Quicksand', sans-serif;
-		margin: auto;
-		margin-top: 4em;
-		width: 500px;
-		// color: #FBEEC1;
-		color: #6a040f;
+		margin: 2em auto 0 auto;
+		padding: 0 1em 0 1em;
+		color: $rosewood;
 		font-weight: bold;
+	}
+	@include breakpoint(xs-width) {
+		h1 {
+			font-size: .9em;
+		}
+		form {
+			width: 80%
+		}
+	}
+
+	@include breakpoint(sm-width) {
+		h1 {
+			font-size: 1.65em;
+		}
+		form textarea {
+			min-height: 8em;
+		}
+		#confirm-msg {
+			width: 60%;
+		}
+	}
+
+	@include breakpoint(lg-width) {
+		h1 {
+			font-size: 2em;
+		}
+	}
+
+	@include breakpoint(sm-height) {
+		h1 {
+			font-size: 1.5em;
+		}
+		form {
+			width: 90%;
+			textarea {
+				min-height: 3em;
+			}
+		}
+		#confirm-msg {
+			width: 90%;
+		}
 	}
 }  

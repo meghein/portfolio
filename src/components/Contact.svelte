@@ -27,7 +27,7 @@
 
     confirmation = 
         `<h2>Thanks for reaching out ${contact.name}!</h2>
-          <p><i>I appreciate that you took the time to write and will get back to you as soon as possible. Have a great day ahead!<i></p>`
+          <p><i>I appreciate that you took the time to write and will get back to you as soon as possible. Have a great day!<i></p>`
 
     // emailjs
     // .send('gmail', apiKeys.TEMPLATE_ID, contact, apiKeys.USER_ID)
