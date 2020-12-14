@@ -93,14 +93,15 @@
 					height: 309.375px
 				}
 			}
-		}
-
-		// iphone...
-		@media (min-width: 375px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 2) {
-			grid-template: auto / 240px;
-			li {
-				width: 240px;
-				height: 148.5px;
+			@media
+			(aspect-ratio: 16/9),
+			(aspect-ratio: 4/3) {
+				display: grid;
+				place-items: center;
+				li {
+					width: 280px;
+					height: 173.25px;
+				}
 			}
 		}
 	}
