@@ -5,8 +5,6 @@
 
   import { y, windowHeight, windowWidth } from '../store.js';
   import scroll from '../helpers/scroll';
-
-  import Symbols from './Symbols.svelte';
   import Nav from './Nav.svelte';
   import Links from './Links.svelte'
   import About from './About.svelte';
@@ -37,7 +35,6 @@
   <div id='home' use:watchResize={handleResize}>
     <div class='background'/>
     <div class='top'/>
-    <!-- <Symbols/> -->
     <div class='home-content'>
       <h1>I'm Meg.</h1>
       <div>
