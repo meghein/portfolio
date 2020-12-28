@@ -20,8 +20,8 @@
     setInterval(() => {
       setTimeout(() => {
         showLinks = !showLinks
-      }, 2000)
-    }, 3000)
+      }, 5000)
+    }, 10000)
   })
 
   function handleResize(node) {
@@ -35,6 +35,7 @@
 
 <main>
   <div id='home' use:watchResize={handleResize}>
+    <div class='background'/>
     <div class='top'/>
     <!-- <Symbols/> -->
     <div class='home-content'>
@@ -50,7 +51,6 @@
         </div>
         {/if}
       </div>
-      <div class=''></div>
     </div>
   </div>
   <Nav/>
