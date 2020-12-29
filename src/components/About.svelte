@@ -16,7 +16,6 @@
     } else {
       visible = false
     }
-    console.log('bundling?')
   })
 
   function toggleModal() {
@@ -33,20 +32,17 @@
   <div class='background'/>
   <div id='scroll-about' class='top'/>
   {#if visible}
-  <!-- <h1 id='about-head' in:fly="{{ x: -50, duration: 3000 }}" out:fade>
-    ABOUT
-  </h1> -->
-  <h1 id='about-head' in:fly="{{ x: -50, duration: 3000 }}" out:fade>
+  <h1 id='about-head' in:fly="{{ x: -50, duration: 3000, easing: elasticOut }}" out:fade>
     HELLO!
   </h1>
   
   <div id='profile'>
     <div
     id='bio'
-    in:fly="{{x:100, duration: 1000, easing: cubicOut}}"
+    in:fly="{{x:10, duration: 1000, easing: cubicOut}}"
     out:fade
     >
-      <img src="images/cutout.png" alt="my face" in:fly="{{x:-100, duration: 1000, delay: 2500, easing: elasticOut}}" out:fly="{{x: -100, duration: 500}}"> 
+      <img src="images/cutout.png" alt="my face" in:fly="{{x:-10, duration: 500, delay: 1200, easing: cubicOut}}" out:fly="{{x: -10, duration: 500}}"> 
       <p>
         
         I'm a web developer with a diverse background ranging from direct action activism in the high seas to forging silver in the Bajio mountains of central Mexico. I recently graduated from <a href='https://www.lighthouselabs.ca/' target='_blank' rel='noreferrer'>Lighthouse Labs'</a> immersive web development boot camp, which reinforced my infatuation with the programmatic potential in shaping the future.<br/><br/>
@@ -65,8 +61,8 @@
     </div>
   </div>
   {#if resume}
-  <div class='modal' out:fly="{{ y: -500, duration: 1000 }}">
-    <div id='resume' in:fly="{{ y: 500, duration: 1000 }}" use:clickOutside on:click_outside={toggleModal}>
+  <div class='modal' out:fly="{{ y: -10, duration: 1000 }}">
+    <div id='resume' in:fly="{{ y: 10, duration: 1000 }}" use:clickOutside on:click_outside={toggleModal}>
       <i id='close' on:click={toggleModal} class="far fa-times-circle"></i>
       <iframe title='Meghan Hein 2020' src="resume.pdf" width={window.innerWidth - 60} height={window.innerHeight - 60} frameborder='0'>
       </iframe>
