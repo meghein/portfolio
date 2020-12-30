@@ -24,6 +24,7 @@
 	}
 	#profile {
 		max-width: 90%;
+		height: auto;
 		margin: auto;
 		font-family: 'Quicksand', sans-serif;	
 		#bio {
@@ -41,7 +42,7 @@
 				max-width: 50%;
 				max-height: 400px;
 				z-index: 10;
-				margin-top: 18em;
+				margin-top: 8em;
 			}
 			a {
 				color: #30b8a1
@@ -50,9 +51,7 @@
 				background-color: #FBEEC1;
 				border: 1px solid $cream;
 				color: #011f51;
-				outline: none;
   			transition: 1s ease-in-out;
-				cursor: pointer;
 				&:hover {
 					background-color: #011f51;
 					color: $cream;
@@ -66,6 +65,9 @@
 		#profile {
 			#bio {
 				font-size: .85em;
+				img {
+					margin-top: 12em;
+				}
 			}
 		}
 	}
@@ -75,7 +77,7 @@
 			width: 80%;
 			#bio {
 				img {
-					margin-top: 10em;
+					margin-top: 6em;
 				}
 			}
 		}
@@ -113,6 +115,7 @@
 			}
 			#bio {
 				img {
+					max-width: 28%;
 					margin-top: 2em;
 				}
 			}
@@ -123,10 +126,7 @@
 		#profile {
 			width: 60%;
 			#bio {
-				font-size: 1.2em;
-				img {
-					margin-top: -2em;
-				}
+				font-size: 1.4em;
 			}
 		}
 	}
