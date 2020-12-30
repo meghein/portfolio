@@ -20,7 +20,7 @@
 	height: 0px;
 	}
 	h1 {
-		font-size: 2em;
+		font-size: 6em;
 		margin-bottom: .5em;
 	}
 	#profile {
@@ -73,7 +73,7 @@
 
 	@include breakpoint(xs-width) {
 		h1 {
-			font-size: 2em;
+			font-size: 3em;
 			margin-bottom: 1em;
 		}
 		#profile {
@@ -85,7 +85,7 @@
 
 	@include breakpoint(sm-width) {
 		h1 {
-			font-size: 3em;
+			font-size: 4em;
 			margin-bottom: 1em;
 		}
 		#profile {
@@ -118,7 +118,7 @@
 			padding: 0;
 		}
 		h1 {
-			font-size: 2em;
+			font-size: 3em;
 			margin-bottom: 1em;
 		}
 		#profile {

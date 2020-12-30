@@ -75,7 +75,7 @@
   <div class='placeholder' style='{visible ? 'display:none' : 'height:95px'}'/>
   {#if visible}
   <h1 id='projects-head' in:fade="{{ duration: 1000 }}">
-      PROJECTS
+      Projects
   </h1>
   {/if}
   <div id='project-list'>

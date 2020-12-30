@@ -10,10 +10,12 @@
 	h1 {
 		margin: 1.5em;
 		color: $rosewood;
-		font-size: 1.1em;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 2em;
 		i {
+			font-family: 'Redressed', cursive;
 			color: $cream;
-			font-size: 1.3em;
+			font-size: 1.5em;
 		}
 	}
 	form {
@@ -63,18 +65,18 @@
 		font-weight: bold;
 	}
 	@include breakpoint(xs-width) {
-		h1 {
-			font-size: .9em;
-		}
+		// h1 {
+		// 	font-size: .9em;
+		// }
 		form {
 			width: 80%
 		}
 	}
 
 	@include breakpoint(sm-width) {
-		h1 {
-			font-size: 1.65em;
-		}
+		// h1 {
+		// 	font-size: 1.65em;
+		// }
 		form textarea {
 			min-height: 8em;
 		}
@@ -83,11 +85,11 @@
 		}
 	}
 
-	@include breakpoint(lg-width) {
-		h1 {
-			font-size: 2em;
-		}
-	}
+	// @include breakpoint(lg-width) {
+	// 	h1 {
+	// 		font-size: 2em;
+	// 	}
+	// }
 
 	@include breakpoint(sm-height) {
 		h1 {

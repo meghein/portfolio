@@ -13,7 +13,8 @@ html, body {
 }
 
 h1 {
-	font-family: 'Playfair Display', serif;
+	font-family: 'Redressed', cursive;
+	font-size: 4em;
 }
 
 input, button, select, textarea {
