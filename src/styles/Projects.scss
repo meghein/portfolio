@@ -88,6 +88,9 @@
 			}
 
 			@include breakpoint(lg-width) {
+				h1 {
+					font-size: 4em;
+				}
 				grid-template: 1fr 1fr / 500px 500px;
 				gap: 10px;
 				li {
