@@ -72,7 +72,8 @@
 
 <div id='projects'>
   <div id='scroll-projects' class='top'/>
-  <div class='placeholder' style='{visible ? 'display:none' : 'height:95px'}'/>
+  <!-- IF THE FONT SIZE OF PROJECTS IS CHANGED, YOU MUST CHANGE PLACEHOLDER HEIGHT TO MATCH -->
+  <div class='placeholder' style='{visible ? 'display:none' : 'height:197px'}'/>
   {#if visible}
   <h1 id='projects-head' in:fade="{{ duration: 1000 }}">
       Projects
