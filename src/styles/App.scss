@@ -4,7 +4,6 @@
 	height: 100vh;
 	background-color: $cream;
 	position: relative;
-	// background: linear-gradient(165deg, $cream 70%, $orange calc(70% + 2px));
 	display: grid;
 	grid-template-rows: 1fr 2fr 1fr;
 	.background {
@@ -18,7 +17,7 @@
 		h1 {
 			display: inline-block;
 			margin: 0;
-			font-size: 5em;
+			font-size: 3em;
 			font-family: 'Redressed', cursive;
 			box-shadow: inset 0 -10px $cream, inset 0 -12px $orange;
 			@include breakpoint(sm-height) {
@@ -30,15 +29,13 @@
 			padding: .1em .25em 0 .25em;
 			margin-top: -.1em;
 			border-top: 2px solid $orange;
-			// @include breakpoint(sm-height) {
-			// 	margin-bottom: .5em;
-			// }
+			font-size: 1em;
 		}
 		button {
 			color: $orange;
 			border: 2px solid $orange;
-			width: 4.5em;
-			height: 4em;
+			width: 4em;
+			height: 3.8em;
 			margin: 1em 0 3em 0;
 			animation: pulse 2.5s infinite;
 			animation-timing-function: linear; 
@@ -63,8 +60,5 @@
 		.home-links {
 			height: 3em;
 		}
-	}
-	@include breakpoint(sm-height) {
-		background: linear-gradient(172deg, $cream 70%, $orange calc(70% + 2px));
 	}
 }
