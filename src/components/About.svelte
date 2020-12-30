@@ -29,7 +29,6 @@
 </script>
 
 <div id='about'>
-  <div class='background'/>
   <div id='scroll-about' class='top'/>
   {#if visible}
   <h1 id='about-head' in:fly="{{ x: -50, duration: 3000, easing: elasticOut }}" out:fade>
