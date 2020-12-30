@@ -18,26 +18,34 @@
 
   const preview = {
     trivia: {
-      gif: 'images/trivia.gif',
+      mp4: 'images/trivia.mp4',
+      webm: 'images/trivia.webm',
+      png: 'images/trivia.png',
       title: 'Trivia Tree',
       description: 'A client-side SPA (single-page app) for quick and simple quiz fun across platforms built with ReactJS and using Open Trivia Database API.',
       site: 'https://trivia-tree.netlify.app/',
       github: 'https://github.com/meghein/trivia-tree'
     },
     sureSheets: {
-      gif: 'images/sheets.gif',
+      mp4: 'images/sheets.mp4',
+      webm: 'images/sheets.webm',
+      png: 'images/sheets.png',
       title: 'Sure Sheets',
       description: 'Built primarily with KonvaJS for full customizable whiteboard capabilities, Sure Sheets helps users build study resources in the age of online learning. The back-end was built with Cloudinary, PostgreSQL, Node and Express and the front-end was built with ReactJS utilizing a multitude of libraries.',
       github: 'https://github.com/meghein/sure-sheets'
     },
     tweeter: {
-      gif: 'images/tweeter.gif',
+      mp4: 'images/tweeter.mp4',
+      webm: 'images/tweeter.webm',
+      png: 'images/tweeter.png',
       title: 'Intergalatic Tweeter',
       description: 'Tweeter is a simple, yet responsive and user-friendly, single-page Twitter clone. Built using HTML, CSS, JS, jQuery and AJAX for the front-end, and Node, Express and MongoDB for the back-end.',
       github: 'https://github.com/meghein/tweeter'
     },
     cayley: {
-      gif: 'images/cayley.gif',
+      mp4: 'images/cayley.mp4',
+      webm: 'images/cayley.webm',
+      png: 'images/cayley.png',
       title: 'Cayley Thomas',
       description: 'A custom portfolio for a multidisciplinary performer that integrates external sources (Spotify, Youtube, Mailchimp, etc). This project was built and deployed in a short window to replace the client\'s previous site.',
       site: 'https://cayleythomas.com/',
@@ -102,7 +110,11 @@
   {#if modal}
     <div id="modal">
       <div id='frame' use:clickOutside on:click_outside={toggleModal}>
-        <img src='{preview[id].gif}' alt='{preview[id].title} preview'/>
+        <video autoplay loop muted playsinline>
+          <source src='{preview[id].webm}' type='video/webm'>
+          <source src='{preview[id].mp4}' type='video/mp4'>
+          <img src='{preview[id].png}' alt='Sorry, your browser does not support embedded videos'/>
+        </video>
         <h2>{preview[id].title}</h2>
         <p>{preview[id].description}</p>
         <div class='bottom-buttons'>
