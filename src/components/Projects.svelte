@@ -110,7 +110,7 @@
   {#if modal}
     <div id="modal">
       <div id='frame' use:clickOutside on:click_outside={toggleModal}>
-        <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline poster='{preview[id].png}'>
           <source src='{preview[id].webm}' type='video/webm'>
           <source src='{preview[id].mp4}' type='video/mp4'>
           <img src='{preview[id].png}' alt='Sorry, your browser does not support embedded videos'/>
