@@ -1,6 +1,7 @@
 <script>
   import { afterUpdate } from "svelte";
-  import { fade, fly } from 'svelte/transition';
+  import { fade, fly, scale } from 'svelte/transition';
+  import { backOut } from 'svelte/easing';
   import { y, windowHeight } from '../store.js';
   import {clickOutside} from '../helpers/clickOutside.js';
 
@@ -83,7 +84,7 @@
   <!-- IF THE FONT SIZE OF 'PROJECTS' IS CHANGED, YOU MUST CHANGE PLACEHOLDER HEIGHT TO MATCH: -->
   <div class='placeholder' style='{visible ? 'display:none' : 'height:148px'}'/>
   {#if visible}
-  <h1 id='projects-head' in:fade="{{ duration: 1000 }}">
+  <h1 id='projects-head' in:scale="{{ duration: 2000, delay: 500, easing: backOut}}">
       Projects
   </h1>
   {/if}
@@ -98,8 +99,8 @@
         >
         {#if show[id]}
         <div transition:fade>
-          <h2 transition:fly="{{ x: -100, duration: 1500 }}">{name}</h2>
-          <p transition:fly="{{ x: 100, duration: 1500 }}">{stack}</p>
+          <h2 transition:fly="{{ x: -80, duration: 1500 }}">{name}</h2>
+          <p transition:fly="{{ x: 80, duration: 1500 }}">{stack}</p>
           <button on:click={toggleModal} value={id}>LEARN MORE</button>
         </div>
         {/if}
@@ -130,7 +131,7 @@
               <i class="fab fa-github"/>
             </a>
           </div>
-          <i class="far fa-window-close"id='close' on:click={toggleModal}></i>
+          <i class="fas fa-times"id='close' on:click={toggleModal}></i>
         </div>
       </div>
     </div>
